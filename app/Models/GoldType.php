@@ -9,7 +9,7 @@ class GoldType extends Model
 {
     use HasFactory;
 
-    public function gold() {
-        return $this->belongsToMany(Gold::class);
+    public function golds() {
+        return $this->hasMany(Gold::class, "gold_type_id", "id");
     }
 }

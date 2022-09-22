@@ -4,36 +4,38 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use PHPUnit\Framework\Constraint\IsReadable;
 
 class Gold extends Model
 {
     use HasFactory;
 
-    public function redemption() {
-        return $this->belongsToMany(Redemption::class);
-    }
-
     public function goldType() {
-        return $this->hasOne(GoldType::class,"id","gold_type_id");
+        return $this->belongsTo(GoldType::class,"gold_type_id", "id");
     }
 
     public function goldPattern() {
-        return $this->hasOne(GoldPattern::class,"id","gold_pattern_id");
+        return $this->belongsTo(GoldPattern::class,"gold_pattern_id", "id");
     }
 
     public function wholesale() {
-        return $this->hasOne(Wholesale::class,"id","wholesale_id");
+        return $this->belongsTo(Wholesale::class, "wholesale_id", "id");
     }
 
-    public function goldBuyPrice() {
-        return $this->hasOne(GoldPrice::class,"id","buy_price_id");
+    public function buyPrice() {
+        return $this->belongsTo(GoldPrice::class, "buy_price_id", "id");
     }
 
-    public function onsiteSale() {
-        return $this->belongsToMany(OnsiteSale::class);
+    public function redemptions() {
+        return $this->hasMany(Redemption::class, "gold_id", "id");
     }
 
-    public function onlineSale() {
-        return $this->belongsToMany(OnlineSale::class);
+    public function onsiteSales() {
+        return $this->hasMany(OnsiteSale::class, "gold_id", "id");
     }
+
+    public function onlineSales() {
+        return $this->hasMany(OnlineSale::class, "gold_id", "id");
+    }
+
 }

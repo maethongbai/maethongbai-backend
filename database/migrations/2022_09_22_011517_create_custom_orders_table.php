@@ -25,8 +25,8 @@ return new class extends Migration
             $table->date("finish_date")->nullable()->default(null);
             $table->date("order_date");
             $table->date("delivery_date");
-            $table->foreignIdFor(\App\Models\CustomOrderWorker::class, "custom_order_worker_id");
-            $table->foreignIdFor(\App\Models\GoldPrice::class, "gold_order_price_id");
+            $table->foreignIdFor(\App\Models\CustomOrderWorker::class, "custom_order_worker_id")->nullable();
+            $table->foreignIdFor(\App\Models\GoldPrice::class, "gold_order_price_id")->nullable(); // ราคาขาย
             $table->string("deposit_payment_method")->nullable()->default(null);
             $table->string("deposit_credit_card_type")->nullable()->default(null);
             $table->string("deposit_bank_name")->nullable()->default(null);
@@ -35,8 +35,8 @@ return new class extends Migration
             $table->string("deposit_slip_image")->nullable()->default(null);
             $table->string("deposit_status")->default("ยังไม่ได้ตรวจสอบ");
             $table->string("deposit_note")->nullable()->default(null);
-            $table->foreignIdFor(\App\Models\User::class, "user_id");
-            $table->foreignIdFor(\App\Models\Employee::class, "employee_id");
+            $table->foreignIdFor(\App\Models\User::class, "user_id")->nullable();
+            $table->foreignIdFor(\App\Models\Employee::class, "employee_id")->nullable();
             $table->string("custom_order_status")->default("รับเรื่อง");
             $table->string("difference_payment_method")->nullable()->default(null);
             $table->string("difference_credit_card_type")->nullable()->default(null);

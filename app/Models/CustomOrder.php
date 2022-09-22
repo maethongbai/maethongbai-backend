@@ -10,18 +10,18 @@ class CustomOrder extends Model
     use HasFactory;
 
     public function customOrderWorker() {
-        return $this->hasOne(CustomOrderWorker::class, "id", "custom_order_worker_id");
+        return $this->belongsTo(CustomOrderWorker::class, "custom_order_worker_id", "id");
     }
 
     public function goldOrderPrice() {
-        return $this->hasOne(GoldPrice::class, "id", "gold_order_price_id");
+        return $this->belongsTo(GoldPrice::class, "gold_order_price_id", "id");
     }
 
     public function user() {
-        return $this->hasOne(User::class, "id", "user_id");
+        return $this->belongsTo(User::class, "user_id", "id");
     }
 
     public function employee() {
-        return $this->hasOne(Employee::class, "id", "employee_id");
+        return $this->belongsTo(Employee::class, "employee_id", "id");
     }
 }

@@ -20,15 +20,15 @@ return new class extends Migration
         // รับซื้อคืน
         Schema::create('redemptions', function (Blueprint $table) {
             $table->id(); // เลขที่รายการรับซื้อคืน
-            $table->foreignIdFor(Gold::class,"gold_id");
+            $table->foreignIdFor(Gold::class,"gold_id")->nullable();
             $table->date("redemption_date"); // วันที่รับซื้อ
-            $table->foreignIdFor(GoldPrice::class, "gold_redemption_id"); // ราคาทองตอนรับซื้อ
+            $table->foreignIdFor(GoldPrice::class, "gold_redemption_price_id")->nullable(); // ราคาทองตอนรับซื้อ
             $table->double("redemption_price"); // ราคารับซื้อ
             $table->string("check_status")->default("รอตรวจสอบ"); // สถานะตรวจสอบ (รอตรวจสอบ, ผ่านการตรวจสอบ, ไม่ผ่านการตรวจสอบ)
-            $table->foreignIdFor(Employee::class, "employee_id"); // รหัสพนักงาน
-            $table->foreignIdFor(User::class, "user_id"); // รหัสลูกค้า
+            $table->foreignIdFor(Employee::class, "employee_id")->nullable(); // รหัสพนักงาน
+            $table->foreignIdFor(User::class, "user_id")->nullable(); // รหัสลูกค้า
             $table->string("id_card_image"); // รูปบัตรประชาชน
-            $table->string("note"); // หมายเหตุ
+            $table->string("note")->nullable()->default(null); // หมายเหตุ
             $table->timestamps();
         });
     }

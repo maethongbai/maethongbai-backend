@@ -16,11 +16,11 @@ return new class extends Migration
         // พนักงาน
         Schema::create('employees', function (Blueprint $table) {
             $table->id(); // รหัสพนักงาน
-            $table->string("name_prefix"); // คำนำหน้า
             $table->string("nickname"); // ชื่อเล่น
             $table->date("work_start_date"); // วันที่เริ่มทำงาน
             $table->date("birth_date"); // วันเกิด
             $table->double("salary"); // เงินเดือน
+            $table->string("role")->default("employee");
             $table->date("work_quit_date")->nullable()->default(null); // วันที่ลาออก
             $table->timestamps();
         });

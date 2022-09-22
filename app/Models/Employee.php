@@ -10,30 +10,34 @@ class Employee extends Model
     use HasFactory;
 
     public function user() {
-        return $this->belongsTo(User::class);
+        return $this->hasOne(User::class,"employee_id", "id");
     }
 
-    public function redemption() {
-        return $this->belongsToMany(Redemption::class, "employee_id");
+    public function redemptions() {
+        return $this->hasMany(Redemption::class, "employee_id", "id");
     }
 
-    public function onsiteSale() {
-        return $this->belongsToMany(OnsiteSale::class);
+    public function onsiteSales() {
+        return $this->hasMany(OnsiteSale::class, "employee_id", "id");
     }
 
-    public function income() {
-        return $this->belongsToMany(Income::class);
+    public function incomes() {
+        return $this->hasMany(Income::class, "employee_id", "id");
     }
 
-    public function withdrawal() {
-        return $this->belongsToMany(Withdrawal::class);
+    public function withdrawals() {
+        return $this->hasMany(Withdrawal::class, "employee_id", "id");
     }
 
-    public function onlineSale() {
-        return $this->belongsTo(OnlineSale::class);
+    public function onlineSaleTrackingIDs() {
+        return $this->hasMany(OnlineSale::class, "tracking_id_employee_id", "id");
     }
 
-    public function customOrder() {
-        return $this->belongsToMany(CustomOrder::class);
+    public function onlineSaleDeliveryStatuses() {
+        return $this->hasMany(OnlineSale::class, "delivery_status_employee_id", "id");
+    }
+
+    public function customOrders() {
+        return $this->hasMany(CustomOrder::class, "employee_id", "id");
     }
 }

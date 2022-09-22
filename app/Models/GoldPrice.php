@@ -9,23 +9,23 @@ class GoldPrice extends Model
 {
     use HasFactory;
 
-    public function goldRedemptionPrice() {
-        return $this->belongsToMany(Redemption::class);
+    public function golds() {
+        return $this->hasMany(Gold::class, "buy_price_id", "id");
     }
 
-    public function gold() {
-        return $this->belongsToMany(Gold::class);
+    public function redemptions() {
+        return $this->hasMany(Redemption::class, "gold_redemption_price_id", "id");
     }
 
-    public function onsiteSale() {
-        return $this->belongsToMany(OnsiteSale::class);
+    public function onsiteSales() {
+        return $this->hasMany(OnsiteSale::class, "gold_sell_price_id", "id");
     }
 
-    public function onlineSale() {
-        return $this->belongsToMany(OnlineSale::class);
+    public function onlineSales() {
+        return $this->hasMany(OnlineSale::class, "gold_sell_price_id", "id");
     }
 
-    public function customOrder() {
-        return $this->belongsToMany(CustomOrder::class);
+    public function customOrders() {
+        return $this->hasMany(CustomOrder::class, "gold_order_price_id", "id");
     }
 }

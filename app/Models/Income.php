@@ -10,6 +10,6 @@ class Income extends Model
     use HasFactory;
 
     public function employee() {
-        return $this->hasOne(Employee::class, "id", "employee_id");
+        return $this->belongsTo(Employee::class, "employee_id","id");
     }
 }

@@ -21,21 +21,21 @@ return new class extends Migration
     {
         Schema::create('onsite_sales', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Gold::class, "gold_id");
+            $table->foreignIdFor(Gold::class, "gold_id")->nullable();
             $table->date("sale_date");
             $table->double("gold_price");
-            $table->string("payment_method");
+            $table->string("payment_method")->nullable()->default(null);
             $table->string("credit_card_type")->nullable()->default(null);
             $table->string("bank_name")->nullable()->default(null);
-            $table->double("paid_amount");
+            $table->double("paid_amount")->default(0);
             $table->double("paid_change")->default(0);
-            $table->string("slip_image");
-            $table->foreignIdFor(GoldPrice::class, "sell_price_id");
+            $table->string("slip_image")->nullable()->default(null);
+            $table->foreignIdFor(GoldPrice::class, "gold_sell_price_id")->nullable();
             $table->string("transfer_status")->default("ยังไม่ได้ตรวจสอบ");
             $table->string("transfer_note")->nullable()->default(null);
-            $table->boolean("is_switch_gold"); // เป็นทองเปลี่ยนหรือไม่
-            $table->foreignIdFor(Employee::class,"employee_id");
-            $table->foreignIdFor(User::class,"user_id");
+            $table->boolean("is_switch_gold")->default(false); // เป็นทองเปลี่ยนหรือไม่
+            $table->foreignIdFor(Employee::class,"employee_id")->nullable();
+            $table->foreignIdFor(User::class,"user_id")->nullable();
             $table->timestamps();
         });
     }

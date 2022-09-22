@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string("name");
             $table->double("amount");
             $table->string("note")->nullable()->default(null);
-            $table->foreignIdFor(Employee::class, "employee_id");
+            $table->foreignIdFor(Employee::class, "employee_id")->nullable();
             $table->date("transaction_date");
             $table->timestamps();
         });

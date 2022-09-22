@@ -10,18 +10,18 @@ class OnsiteSale extends Model
     use HasFactory;
 
     public function gold() {
-        return $this->hasOne(Gold::class, "id", "gold_id");
+        return $this->belongsTo(Gold::class, "gold_id","id");
     }
 
-    public function sellPrice() {
-        return $this->hasOne(GoldPrice::class, "id", "sell_price_id");
+    public function goldSellPrice() {
+        return $this->belongsTo(GoldPrice::class, "gold_sell_price_id","id");
     }
 
     public function employee() {
-        return $this->hasOne(Employee::class, "id", "employee_id");
+        return $this->belongsTo(Employee::class,  "employee_id","id");
     }
 
     public function user() {
-        return $this->hasOne(User::class, "id", "user_id");
+        return $this->belongsTo(User::class, "user_id","id");
     }
 }

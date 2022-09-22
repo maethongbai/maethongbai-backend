@@ -9,7 +9,7 @@ class CustomOrderWorker extends Model
 {
     use HasFactory;
 
-    public function customOrder() {
-        return $this->belongsToMany(CustomOrder::class);
+    public function customOrders() {
+        return $this->hasMany(CustomOrder::class, "custom_order_worker_id", "id");
     }
 }

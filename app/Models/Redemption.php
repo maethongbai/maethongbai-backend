@@ -9,19 +9,20 @@ class Redemption extends Model
 {
     use HasFactory;
 
+    public function gold() {
+        return $this->belongsTo(Gold::class,  "gold_id","id");
+    }
+
     public function goldRedemptionPrice() {
-        return $this->hasOne(GoldPrice::class,"id","gold_redemption_id");
+        return $this->belongsTo(GoldPrice::class, "gold_redemption_price_id","id");
     }
 
     public function employee() {
-        return $this->hasOne(Employee::class,"id","employee_id");
+        return $this->belongsTo(Employee::class, "employee_id","id");
     }
 
     public function user() {
-        return $this->hasOne(User::class,"id","user_id");
+        return $this->belongsTo(User::class, "user_id","id");
     }
 
-    public function gold() {
-        return $this->hasOne(Gold::class,"id","gold_id");
-    }
 }

@@ -43,22 +43,22 @@ class User extends Authenticatable
     ];
 
     public function employee() {
-        return $this->hasOne(Employee::class,"id", "user_id");
+        return $this->belongsTo(Employee::class, "employee_id","id");
     }
 
-    public function redemption() {
-        return $this->belongsToMany(Redemption::class);
+    public function redemptions() {
+        return $this->hasMany(Redemption::class, "user_id", "id");
     }
 
-    public function onsiteSale() {
-        return $this->belongsToMany(OnsiteSale::class);
+    public function onsiteSales() {
+        return $this->hasMany(OnsiteSale::class, "user_id", "id");
     }
 
-    public function onlineSale() {
-        return $this->belongsToMany(OnlineSale::class);
+    public function onlineSales() {
+        return $this->hasMany(OnlineSale::class, "user_id", "id");
     }
 
-    public function customOrder() {
-        return $this->belongsToMany(CustomOrder::class);
+    public function customOrders() {
+        return $this->hasMany(CustomOrder::class, "user_id", "id");
     }
 }

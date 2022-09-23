@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string("name"); // ชื่อสินค้า
             $table->foreignIdFor(GoldType::class, "gold_type_id")->nullable(); // รหัสประเภท
             $table->string("weight"); // น้ำหนัก
+            $table->double("custom_weight")->nullable()->default(null); // น้ำหนักตามชั่ง
             $table->string("pattern_type"); // ประเภทของลาย (ตัน โป่ง)
             $table->foreignIdFor(GoldPattern::class, "gold_pattern_id")->nullable(); // รหัสลาย
             $table->string("size"); // ขนาด

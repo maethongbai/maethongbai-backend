@@ -46,8 +46,6 @@ return new class extends Migration
             $table->string("difference_slip_image")->nullable()->default(null);
             $table->string("difference_status")->default("ยังไม่ได้ตรวจสอบ");
             $table->string("difference_note")->nullable()->default(null);
-
-
             $table->timestamps();
         });
     }

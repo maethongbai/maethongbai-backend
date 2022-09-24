@@ -20,7 +20,7 @@ class GoldPriceSeeder extends Seeder
         if (!$obj) {
             $obj = new GoldPrice();
             $obj->datetime = fake()->dateTimeBetween('-10 years')->format('Y-m-d H:i:s');
-            $obj->redemption_price = 24000;
+            $obj->buy_price = 24000;
             $obj->sell_price = 26000;
             $obj->save();
         }

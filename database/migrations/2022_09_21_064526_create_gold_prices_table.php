@@ -17,7 +17,7 @@ return new class extends Migration
         Schema::create('gold_prices', function (Blueprint $table) {
             $table->id();
             $table->dateTime("datetime"); // วันที่และเวลา
-            $table->double("redemption_price"); // ราคาทองรับซื้อ
+            $table->double("buy_price"); // ราคาทองรับซื้อ
             $table->double("sell_price"); // ราคาทองขาย
             $table->timestamps();
         });

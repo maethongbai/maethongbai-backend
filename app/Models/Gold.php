@@ -22,8 +22,8 @@ class Gold extends Model
         return $this->belongsTo(Wholesale::class, "wholesale_id", "id");
     }
 
-    public function buyPrice() {
-        return $this->belongsTo(GoldPrice::class, "buy_price_id", "id");
+    public function goldBuyPrice() {
+        return $this->belongsTo(GoldPrice::class, "gold_buy_price_id", "id");
     }
 
     public function redemptions() {

@@ -17,3 +17,26 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get("/", function () {
+    return [
+        'version' => "1.0.0"
+    ];
+});
+
+Route::apiResources([
+    "/custom_orders" => \App\Http\Controllers\Api\CustomOrderController::class,
+    "/custom_order_workers" => \App\Http\Controllers\Api\CustomOrderWorkerController::class,
+    "/employees" => \App\Http\Controllers\Api\EmployeeController::class,
+    "/golds" => \App\Http\Controllers\Api\GoldController::class,
+    "/gold_patterns" => \App\Http\Controllers\Api\GoldPatternController::class,
+    "/gold_prices" => \App\Http\Controllers\Api\GoldPriceController::class,
+    "/gold_types" => \App\Http\Controllers\Api\GoldTypeController::class,
+    "/incomes" => \App\Http\Controllers\Api\IncomeController::class,
+    "/online_sales" => \App\Http\Controllers\Api\OnlineSaleController::class,
+    "/onsite_sales" => \App\Http\Controllers\Api\OnsiteSaleController::class,
+    "/redemptions" => \App\Http\Controllers\Api\RedemptionController::class,
+    "/users" => \App\Http\Controllers\Api\UserController::class,
+    "/wholesales" => \App\Http\Controllers\Api\WholesaleController::class,
+    "/withdrawals" => \App\Http\Controllers\Api\WithdrawalController::class
+]);

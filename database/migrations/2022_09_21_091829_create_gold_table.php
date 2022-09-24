@@ -31,11 +31,11 @@ return new class extends Migration
             $table->unsignedInteger("amount"); // จำนวนชิ้น
             $table->date("import_date"); // วันที่เอาของเข้า
             $table->foreignIdFor(Wholesale::class, "wholesale_id")->nullable(); // รหัสร้านขายส่ง
-            $table->foreignIdFor(GoldPrice::class, "buy_price_id")->nullable(); // ราคาทองตอนซื้อจากร้านขายส่ง
+            $table->foreignIdFor(GoldPrice::class, "gold_buy_price_id")->nullable(); // ราคาทองตอนซื้อจากร้านขายส่ง
             $table->string("stock_approval_status")->default("รออนุมัติ"); // สถานะอนุมัติลง stock (รออนุมัติ อนุมัติ ไม่อนุมัติ)
             $table->string("percentage")->default("96.5% รูปพรรณ"); // เปอร์เซนต์ทอง
             $table->string("brand"); // ยี่ห้อทอง
-            $table->string("image"); // รูป
+            $table->string("image")->nullable()->default(null); // รูป
             $table->timestamps();
         });
     }

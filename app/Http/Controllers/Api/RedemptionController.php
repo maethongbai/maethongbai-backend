@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\RedemptionResource;
 use App\Models\Employee;
 use App\Models\Gold;
 use App\Models\GoldPrice;
@@ -21,7 +22,7 @@ class RedemptionController extends Controller
     public function index()
     {
         $redemptions = Redemption::all();
-        return $redemptions;
+        return RedemptionResource::collection($redemptions);
     }
 
     /**

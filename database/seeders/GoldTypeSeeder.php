@@ -16,10 +16,59 @@ class GoldTypeSeeder extends Seeder
      */
     public function run()
     {
-        $obj = GoldType::where("id",1)->first();
+        $obj = GoldType::where("id", 1)->first();
         if (!$obj) {
             $obj = new GoldType();
-            $obj->name = "test type";
+            $obj->name = "แหวน";
+            $obj->save();
+        }
+
+        $obj = GoldType::where("id", 2)->first();
+        if (!$obj) {
+            $obj = new GoldType();
+            $obj->name = "สร้อยคอ";
+            $obj->save();
+        }
+
+        $obj = GoldType::where("id", 3)->first();
+        if (!$obj) {
+            $obj = new GoldType();
+            $obj->name = "สร้อยมือ";
+            $obj->save();
+        }
+
+        $obj = GoldType::where("id", 4)->first();
+        if (!$obj) {
+            $obj = new GoldType();
+            $obj->name = "กำไล";
+            $obj->save();
+        }
+
+        $obj = GoldType::where("id", 5)->first();
+        if (!$obj) {
+            $obj = new GoldType();
+            $obj->name = "จี้";
+            $obj->save();
+        }
+
+        $obj = GoldType::where("id", 6)->first();
+        if (!$obj) {
+            $obj = new GoldType();
+            $obj->name = "ต่างหู";
+            $obj->save();
+        }
+
+        $obj = GoldType::where("id", 7)->first();
+        if (!$obj) {
+            $obj = new GoldType();
+            $obj->name = "สร้อยข้อเท้าเด็ก";
+            $obj->save();
+        }
+
+        $obj = GoldType::where("id", 8)->first();
+        if (!$obj) {
+            $obj = new GoldType();
+            $obj->name = "ทองแท่ง";
             $obj->save();
         }
     }

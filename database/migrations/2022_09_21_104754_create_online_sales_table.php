@@ -19,12 +19,11 @@ return new class extends Migration
             $table->date("sale_date");
             $table->double("gold_price");
             $table->string("slip_image");
-            $table->string("transfer_status")->default("ยังไม่ได้ตรวจสอบ");
+            $table->string("transfer_status")->default("ยังไม่ได้ตรวจสอบ");//transfer_status = สถานะคำสั่งซื้อด้วย ถ้ายืนยันสถานะคำสั่งซื้อก็สำเร็จ
             $table->string("transfer_note")->nullable()->default(null);
             $table->string("additional_note")->nullable()->default(null);
             $table->foreignIdFor(\App\Models\GoldPrice::class, "gold_sell_price_id")->nullable();
             $table->unsignedInteger("amount");
-            $table->string("custom_order_status")->default("รอตรวจสอบ");
             $table->string("delivery_status")->nullable()->default(null);
             $table->string("tracking_number")->nullable()->default(null);
             $table->foreignIdFor(\App\Models\Employee::class, "tracking_id_employee_id")->nullable()->default(null);

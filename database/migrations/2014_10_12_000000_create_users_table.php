@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string("name_prefix"); // คำนำหน้าชื่อ
             $table->string("first_name"); // ชื่อ
             $table->string("last_name"); // นามสกุล
-            $table->string("phone"); // เบอร์โทร
+            $table->string("phone")->unique(); // เบอร์โทร
             $table->string("id_card_number")->nullable()->default(null); // เลขบัตรประชาชน
             $table->string("address")->nullable()->default(null); // ที่อยู่
             $table->string("role")->default("user"); // ตำแหน่ง (user,employee,account,manager)

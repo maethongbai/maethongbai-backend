@@ -24,4 +24,8 @@ class OnsiteSale extends Model
     public function user() {
         return $this->belongsTo(User::class, "user_id","id");
     }
+
+    public function redemptionID() {
+        return $this->belongsTo(Redemption::class, "redemption_id", "id");
+    }
 }

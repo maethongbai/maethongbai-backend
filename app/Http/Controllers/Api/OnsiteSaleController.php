@@ -7,6 +7,7 @@ use App\Models\Employee;
 use App\Models\Gold;
 use App\Models\GoldPrice;
 use App\Models\OnsiteSale;
+use App\Models\Redemption;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -48,6 +49,7 @@ class OnsiteSaleController extends Controller
         $onsiteSale->goldSellPrice()->associate(GoldPrice::find($request->get("gold_sell_price_id")));
         $onsiteSale->employee()->associate(Employee::find($request->get("employee_id")));
         $onsiteSale->user()->associate(User::find($request->get("user_id")));
+        $onsiteSale->redemptionID()->associate(Redemption::find($request->get("redemption_id")));
 
         if (($request->slip_image) != null) {
             $imageName = time().'.'.$request->slip_image->extension();
@@ -104,6 +106,7 @@ class OnsiteSaleController extends Controller
         if ($request->has("gold_sell_price_id")) $onsiteSale->goldSellPrice()->associate(GoldPrice::find($request->get("gold_sell_price_id")));
         if ($request->has("employee_id")) $onsiteSale->employee()->associate(Employee::find($request->get("employee_id")));
         if ($request->has("user_id")) $onsiteSale->user()->associate(User::find($request->get("user_id")));
+        if ($request->has("redemption_id")) $onsiteSale->redemptionID()->associate(Redemption::find($request->get("redemption_id")));
 
         if (($request->slip_image) != null && ($request->has("slip_image"))) {
             $imageName = time().'.'.$request->slip_image->extension();

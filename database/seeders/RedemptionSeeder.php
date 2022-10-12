@@ -23,7 +23,7 @@ class RedemptionSeeder extends Seeder
         if (!$obj) {
             $obj = new Redemption();
             $obj->redemption_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
-            $obj->redemption_price = 20000;
+            $obj->redemption_price = 28815;
             $obj->id_card_image = "not set";
             $obj->check_status = "ผ่านการตรวจสอบ";
             $obj->save();
@@ -45,7 +45,7 @@ class RedemptionSeeder extends Seeder
         if (!$obj) {
             $obj = new Redemption();
             $obj->redemption_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
-            $obj->redemption_price = 20000;
+            $obj->redemption_price = 28805;
             $obj->id_card_image = "not set";
             $obj->save();
 
@@ -66,7 +66,7 @@ class RedemptionSeeder extends Seeder
         if (!$obj) {
             $obj = new Redemption();
             $obj->redemption_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
-            $obj->redemption_price = 20000;
+            $obj->redemption_price = 58008;
             $obj->id_card_image = "not set";
             $obj->check_status = "ผ่านการตรวจสอบ";
             $obj->save();
@@ -88,7 +88,7 @@ class RedemptionSeeder extends Seeder
         if (!$obj) {
             $obj = new Redemption();
             $obj->redemption_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
-            $obj->redemption_price = 20000;
+            $obj->redemption_price = 57631;
             $obj->id_card_image = "not set";
             $obj->check_status = "ไม่ผ่านการตรวจสอบ";
             $obj->note = "ทองปลอม";
@@ -111,7 +111,7 @@ class RedemptionSeeder extends Seeder
         if (!$obj) {
             $obj = new Redemption();
             $obj->redemption_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
-            $obj->redemption_price = 20000;
+            $obj->redemption_price = 27681;
             $obj->id_card_image = "not set";
             $obj->save();
 

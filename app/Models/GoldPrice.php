@@ -9,10 +9,6 @@ class GoldPrice extends Model
 {
     use HasFactory;
 
-    public function golds() {
-        return $this->hasMany(Gold::class, "gold_buy_price_id", "id");
-    }
-
     public function redemptions() {
         return $this->hasMany(Redemption::class, "gold_redemption_price_id", "id");
     }

@@ -38,7 +38,6 @@ class OnlineSaleController extends Controller
         if ($request->has("transfer_status")) $onlineSale->transfer_status = $request->get("transfer_status");
         if ($request->has("transfer_note")) $onlineSale->transfer_note = $request->get("transfer_note");
         if ($request->has("additional_note")) $onlineSale->additional_note = $request->get("additional_note");
-        if ($request->has("custom_order_status")) $onlineSale->custom_order_status = $request->get("custom_order_status");
         if ($request->has("delivery_status")) $onlineSale->delivery_status = $request->get("delivery_status");
         if ($request->has("tracking_number")) $onlineSale->tracking_number = $request->get("tracking_number");
 
@@ -97,7 +96,6 @@ class OnlineSaleController extends Controller
         if ($request->has("transfer_note")) $onlineSale->transfer_note = $request->get("transfer_note");
         if ($request->has("additional_note")) $onlineSale->additional_note = $request->get("additional_note");
         if ($request->has("amount")) $onlineSale->amount = $request->get("amount");
-        if ($request->has("custom_order_status")) $onlineSale->custom_order_status = $request->get("custom_order_status");
         if ($request->has("delivery_status")) $onlineSale->delivery_status = $request->get("delivery_status");
         if ($request->has("tracking_number")) $onlineSale->tracking_number = $request->get("tracking_number");
         if ($request->has("note")) $onlineSale->note = $request->get("note");

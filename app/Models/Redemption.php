@@ -25,4 +25,8 @@ class Redemption extends Model
         return $this->belongsTo(User::class, "user_id","id");
     }
 
+    public function onsiteSales() {
+        return $this->hasMany(OnsiteSale::class, "redemption_id", "id");
+    }
+
 }

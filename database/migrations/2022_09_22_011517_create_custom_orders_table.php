@@ -17,14 +17,14 @@ return new class extends Migration
             $table->id();
             $table->string("name");
             $table->string("type");
-            $table->string("weight");
-            $table->double("wage");
+            $table->double("weight");
+            $table->double("wage");//ค่าแรง
             $table->double("full_price");
             $table->double("deposit_total_amount");
             $table->double("difference_amount");
-            $table->date("finish_date")->nullable()->default(null);
-            $table->date("order_date");
-            $table->date("delivery_date");
+            $table->date("finish_date");//วันที่เสร็จ
+            $table->date("order_date");//วันที่สั่ง
+            $table->date("delivery_date")->nullable()->default(null);//วันที่ส่ง
             $table->foreignIdFor(\App\Models\CustomOrderWorker::class, "custom_order_worker_id")->nullable();
             $table->foreignIdFor(\App\Models\GoldPrice::class, "gold_order_price_id")->nullable(); // ราคาขาย
             $table->string("deposit_payment_method")->nullable()->default(null);

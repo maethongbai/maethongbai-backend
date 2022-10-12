@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Employee;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -22,20 +23,20 @@ return new class extends Migration
             $table->id(); // รหัสทอง
             $table->string("name"); // ชื่อสินค้า
             $table->foreignIdFor(GoldType::class, "gold_type_id")->nullable(); // รหัสประเภท
-            $table->string("weight"); // น้ำหนัก
+            $table->string("weight")->nullable()->default(null); // น้ำหนัก
             $table->double("custom_weight")->nullable()->default(null); // น้ำหนักตามชั่ง
             $table->string("pattern_type"); // ประเภทของลาย (ตัน โป่ง)
             $table->foreignIdFor(GoldPattern::class, "gold_pattern_id")->nullable(); // รหัสลาย
             $table->string("size"); // ขนาด
-            $table->double("pension_per_piece"); // ค่าบำเหน็จต่อชิ้น
-            $table->unsignedInteger("amount"); // จำนวนชิ้น
-            $table->date("import_date"); // วันที่เอาของเข้า
+            $table->double("pension_per_piece")->nullable(); // ค่าบำเหน็จต่อชิ้น
+            $table->date("import_date"); // วันที่เอาของเข้า or วันที่รับของจากลูกค้า
             $table->foreignIdFor(Wholesale::class, "wholesale_id")->nullable(); // รหัสร้านขายส่ง
-            $table->foreignIdFor(GoldPrice::class, "gold_buy_price_id")->nullable(); // ราคาทองตอนซื้อจากร้านขายส่ง
+            $table->integer("gold_buy_price_wholesale")->nullable();// ราคาทองตอนซื้อจากร้านขายส่ง
             $table->string("stock_approval_status")->default("รออนุมัติ"); // สถานะอนุมัติลง stock (รออนุมัติ อนุมัติ ไม่อนุมัติ)
             $table->string("percentage")->default("96.5% รูปพรรณ"); // เปอร์เซนต์ทอง
-            $table->string("brand"); // ยี่ห้อทอง
+            $table->string("brand")->nullable(); // ยี่ห้อทอง กรณีรับซื้อจากลูกค้า
             $table->string("image")->nullable()->default(null); // รูป
+            $table->foreignIdFor(Employee::class,"employee_add_stock_id")->nullable();//พนักงานที่เพิ่มทองลงstock
             $table->timestamps();
         });
     }

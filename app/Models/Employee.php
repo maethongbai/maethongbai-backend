@@ -40,4 +40,8 @@ class Employee extends Model
     public function customOrders() {
         return $this->hasMany(CustomOrder::class, "employee_id", "id");
     }
+
+    public function golds() {
+        return $this->hasMany(Gold::class, "employee_add_stock_id", "id");
+    }
 }

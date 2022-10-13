@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\GoldResource;
 use App\Models\Employee;
 use App\Models\Gold;
 use App\Models\GoldPattern;
@@ -28,7 +29,7 @@ class GoldController extends Controller
     public function index()
     {
         $golds = Gold::all();
-        return $golds;
+        return GoldResource::collection($golds);
     }
 
     /**
@@ -84,7 +85,7 @@ class GoldController extends Controller
      */
     public function show(Gold $gold)
     {
-        return $gold;
+        return new GoldResource($gold);
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\IncomeResource;
 use App\Models\Employee;
 use App\Models\Income;
 use Illuminate\Http\Request;
@@ -18,7 +19,7 @@ class IncomeController extends Controller
     public function index()
     {
         $incomes = Income::all();
-        return $incomes;
+        return IncomeResource::collection($incomes);
     }
 
     /**
@@ -59,7 +60,7 @@ class IncomeController extends Controller
      */
     public function show(Income $income)
     {
-        return $income;
+        return new IncomeResource($income);
     }
 
     /**

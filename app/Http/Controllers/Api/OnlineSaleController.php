@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\OnlineSaleResource;
 use App\Models\Employee;
 use App\Models\Gold;
 use App\Models\GoldPrice;
@@ -21,7 +22,7 @@ class OnlineSaleController extends Controller
     public function index()
     {
         $onlineSales = OnlineSale::all();
-        return $onlineSales;
+        return OnlineSaleResource::collection($onlineSales);
     }
 
     /**
@@ -78,7 +79,7 @@ class OnlineSaleController extends Controller
      */
     public function show(OnlineSale $onlineSale)
     {
-        return $onlineSale;
+        return new OnlineSaleResource($onlineSale);
     }
 
     /**

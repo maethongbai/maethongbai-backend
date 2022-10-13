@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\OnsiteSaleResource;
 use App\Models\Employee;
 use App\Models\Gold;
 use App\Models\GoldPrice;
@@ -22,7 +23,7 @@ class OnsiteSaleController extends Controller
     public function index()
     {
         $onsiteSales = OnsiteSale::all();
-        return $onsiteSales;
+        return OnsiteSaleResource::collection($onsiteSales);
     }
 
     /**
@@ -79,7 +80,7 @@ class OnsiteSaleController extends Controller
      */
     public function show(OnsiteSale $onsiteSale)
     {
-        return $onsiteSale;
+        return new OnsiteSaleResource($onsiteSale);
     }
 
     /**

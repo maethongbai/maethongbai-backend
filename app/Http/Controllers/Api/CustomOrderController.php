@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\CustomOrderResource;
 use App\Models\CustomOrder;
 use App\Models\CustomOrderWorker;
 use App\Models\Employee;
@@ -21,7 +22,7 @@ class CustomOrderController extends Controller
     public function index()
     {
         $custom_orders = CustomOrder::all();
-        return $custom_orders;
+        return CustomOrderResource::collection($custom_orders);
     }
 
     /**
@@ -98,7 +99,7 @@ class CustomOrderController extends Controller
      */
     public function show(CustomOrder $custom_order)
     {
-        return $custom_order;
+        return new CustomOrderResource($custom_order);
     }
 
     /**

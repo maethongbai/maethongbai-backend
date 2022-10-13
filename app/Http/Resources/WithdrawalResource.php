@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use App\Models\Employee;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class UserResource extends JsonResource
+class WithdrawalResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,14 +16,11 @@ class UserResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
-            'email' => $this->email,
-            'username' => $this->username,
-            'first_name' => $this->first_name,
-            'last_name' => $this->last_name,
-            'phone' => $this->phone,
-            'role' => $this->role,
-            'employee' => Employee::find($this->employee_id)
+            'name' => $this->name,
+            'amount' => $this->amount,
+            'employee' => Employee::find($this->employee_id),
+            'withdrawal_date' => $this->withdrawal_date,
+            'withdrawal_status' => $this->withdrawal_status
         ];
     }
 }

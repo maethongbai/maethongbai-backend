@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\WithdrawalResource;
 use App\Models\Employee;
 use App\Models\Withdrawal;
 use Illuminate\Http\Request;
@@ -18,7 +19,7 @@ class WithdrawalController extends Controller
     public function index()
     {
         $withdrawals = Withdrawal::all();
-        return $withdrawals;
+        return WithdrawalResource::collection($withdrawals);
     }
 
     /**
@@ -60,7 +61,7 @@ class WithdrawalController extends Controller
      */
     public function show(Withdrawal $withdrawal)
     {
-        return $withdrawal;
+        return new WithdrawalResource($withdrawal);
     }
 
     /**

@@ -20,7 +20,7 @@ class RedemptionResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'gold' => Gold::find($this->gold_id),
+            'gold' => new GoldResource(Gold::find($this->gold_id)),
             'redemption_date' => $this->redemption_date,
             'gold_redemption_price' => GoldPrice::find($this->gold_redemption_price_id),
             'redemption_price' => $this->redemption_price,

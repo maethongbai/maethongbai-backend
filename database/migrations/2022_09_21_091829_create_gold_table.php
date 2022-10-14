@@ -21,13 +21,13 @@ return new class extends Migration
     {
         Schema::create('gold', function (Blueprint $table) {
             $table->id(); // รหัสทอง
-            $table->string("name"); // ชื่อสินค้า
+            $table->string("name")->nullable(); // ชื่อสินค้า
             $table->foreignIdFor(GoldType::class, "gold_type_id")->nullable(); // รหัสประเภท
             $table->string("weight")->nullable()->default(null); // น้ำหนัก
             $table->double("custom_weight")->nullable()->default(null); // น้ำหนักตามชั่ง
             $table->string("pattern_type"); // ประเภทของลาย (ตัน โป่ง)
             $table->foreignIdFor(GoldPattern::class, "gold_pattern_id")->nullable(); // รหัสลาย
-            $table->string("size"); // ขนาด
+            $table->string("size")->nullable(); // ขนาด
             $table->double("pension_per_piece")->nullable(); // ค่าบำเหน็จต่อชิ้น
             $table->date("import_date"); // วันที่เอาของเข้า or วันที่รับของจากลูกค้า
             $table->foreignIdFor(Wholesale::class, "wholesale_id")->nullable(); // รหัสร้านขายส่ง

@@ -26,7 +26,7 @@ class RedemptionResource extends JsonResource
             'redemption_price' => $this->redemption_price,
             'check_status' => $this->check_status,
             'employee' => Employee::find($this->employee_id),
-            'user' => User::find($this->user_id),
+            'user' => new UserResource(User::find($this->user_id)),
             'id_card_image' => $this->id_card_image,
             'note' => $this->note
 

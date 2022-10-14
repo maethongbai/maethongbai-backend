@@ -78,7 +78,7 @@ class UserSeeder extends Seeder
             $obj = new User();
             $obj->username = "amorn";
             $obj->email = "amorn@gmail.com";
-            $obj->password = Hash::make("amorn");
+            $obj->password = Hash::make("amornamorn");
             $obj->name_prefix = "นาย";
             $obj->first_name = "อมร";
             $obj->last_name = "ติระศิริชัย";

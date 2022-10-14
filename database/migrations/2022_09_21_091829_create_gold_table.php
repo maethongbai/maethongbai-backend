@@ -35,7 +35,7 @@ return new class extends Migration
             $table->string("stock_approval_status")->default("รออนุมัติ"); // สถานะอนุมัติลง stock (รออนุมัติ อนุมัติ ไม่อนุมัติ)
             $table->string("percentage")->default("96.5% รูปพรรณ"); // เปอร์เซนต์ทอง
             $table->string("brand")->nullable(); // ยี่ห้อทอง กรณีรับซื้อจากลูกค้า
-            $table->string("image")->nullable()->default(null); // รูป
+            $table->mediumText("image")->nullable()->default(null); // รูป
             $table->foreignIdFor(Employee::class,"employee_add_stock_id")->nullable();//พนักงานที่เพิ่มทองลงstock
             $table->timestamps();
         });

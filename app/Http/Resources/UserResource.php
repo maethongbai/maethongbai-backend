@@ -23,7 +23,9 @@ class UserResource extends JsonResource
             'last_name' => $this->last_name,
             'phone' => $this->phone,
             'role' => $this->role,
-            'employee' => Employee::find($this->employee_id)
+            'employee' => Employee::find($this->employee_id),
+            'id_card_number' => $this->id_card_number,
+            'address' => $this->address
         ];
     }
 }

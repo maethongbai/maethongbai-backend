@@ -32,7 +32,7 @@ return new class extends Migration
             $table->string("deposit_bank_name")->nullable()->default(null);
             $table->double("deposit_paid_amount")->default(0);
             $table->double("deposit_change_amount")->default(0);
-            $table->string("deposit_slip_image")->nullable()->default(null);
+            $table->mediumText("deposit_slip_image")->nullable()->default(null);
             $table->string("deposit_status")->default("ยังไม่ได้ตรวจสอบ");
             $table->string("deposit_note")->nullable()->default(null);
             $table->foreignIdFor(\App\Models\User::class, "user_id")->nullable();
@@ -43,7 +43,7 @@ return new class extends Migration
             $table->string("difference_bank_name")->nullable()->default(null);
             $table->double("difference_paid_amount")->default(0);
             $table->double("difference_change_amount")->default(0);
-            $table->string("difference_slip_image")->nullable()->default(null);
+            $table->mediumText("difference_slip_image")->nullable()->default(null);
             $table->string("difference_status")->default("ยังไม่ได้ตรวจสอบ");
             $table->string("difference_note")->nullable()->default(null);
             $table->timestamps();

@@ -128,5 +128,19 @@ class EmployeeSeeder extends Seeder
             $user = User::all()->where("first_name","=","แม็ค")->first();
             $obj->user()->save($user);
         }
+
+        $obj = Employee::where("id",9)->first();
+        if (!$obj) {
+            $obj = new Employee();
+            $obj->nickname = "อมร";
+            $obj->work_start_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
+            $obj->birth_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
+            $obj->salary = 28000;
+            $obj->role = "manager";
+            $obj->save();
+
+            $user = User::all()->where("first_name","=","อมร")->first();
+            $obj->user()->save($user);
+        }
     }
 }

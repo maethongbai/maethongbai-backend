@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignIdFor(\App\Models\Gold::class, "gold_id")->nullable();
             $table->date("sale_date");
             $table->double("gold_price");
-            $table->string("slip_image");
+            $table->mediumText("slip_image");
             $table->string("transfer_status")->default("ยังไม่ได้ตรวจสอบ");//transfer_status = สถานะคำสั่งซื้อด้วย ถ้ายืนยันสถานะคำสั่งซื้อก็สำเร็จ
             $table->string("transfer_note")->nullable()->default(null);
             $table->string("additional_note")->nullable()->default(null);

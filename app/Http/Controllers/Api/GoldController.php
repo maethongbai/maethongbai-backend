@@ -41,7 +41,7 @@ class GoldController extends Controller
     public function store(Request $request)
     {
         $gold = new Gold();
-        $gold->name = $request->get("name");
+        if ($request->has("name")) $gold->name = $request->get("name");
         if ($request->has("weight")) $gold->weight = $request->get("weight");
         if ($request->has("custom_weight")) $gold->custom_weight = $request->get("custom_weight");
         if ($request->has("pattern_type")) $gold->pattern_type = $request->get("pattern_type");
@@ -55,7 +55,7 @@ class GoldController extends Controller
 
         $gold->goldType()->associate(GoldType::find($request->get("gold_type_id")));
         $gold->goldPattern()->associate(GoldPattern::find($request->get("gold_pattern_id")));
-        $gold->wholesale()->associate(Wholesale::find($request->get("wholesale_id")));
+        if ($request->has("wholesale")) $gold->wholesale()->associate(Wholesale::find($request->get("wholesale_id")));
         $gold->employeeAddStock()->associate(Employee::find($request->get("employee_add_stock_id")));
 
         if ($gold->save()) {

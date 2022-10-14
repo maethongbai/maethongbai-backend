@@ -30,7 +30,7 @@ return new class extends Migration
             $table->string("bank_name")->nullable()->default(null);
             $table->double("paid_amount")->default(0);
             $table->double("paid_change")->default(0);
-            $table->string("slip_image")->nullable()->default(null);
+            $table->mediumText("slip_image")->nullable()->default(null);
             $table->foreignIdFor(GoldPrice::class, "gold_sell_price_id")->nullable();
             $table->string("transfer_status")->default("ยังไม่ได้ตรวจสอบ");
             $table->string("transfer_note")->nullable()->default(null);

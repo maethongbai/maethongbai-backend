@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string("check_status")->default("รอตรวจสอบ"); // สถานะตรวจสอบ (รอตรวจสอบ, ผ่านการตรวจสอบ, ไม่ผ่านการตรวจสอบ)
             $table->foreignIdFor(Employee::class, "employee_id")->nullable(); // รหัสพนักงาน
             $table->foreignIdFor(User::class, "user_id")->nullable(); // รหัสลูกค้า
-            $table->string("id_card_image"); // รูปบัตรประชาชน
+            $table->mediumText("id_card_image"); // รูปบัตรประชาชน
             $table->string("note")->nullable()->default(null); // หมายเหตุ
             $table->timestamps();
         });

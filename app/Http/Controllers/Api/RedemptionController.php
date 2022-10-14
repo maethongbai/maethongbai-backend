@@ -37,18 +37,13 @@ class RedemptionController extends Controller
         $redemption->redemption_date = $request->get("redemption_date");
         $redemption->redemption_price = $request->get("redemption_price");
         if ($request->has("check_status")) $redemption->check_status = $request->get("check_status");
-        if ($request->has("note")) $redemption->check_status = $request->get("note");
+        if ($request->has("note")) $redemption->note = $request->get("note");
+        $redemption->id_card_image = $request->get("id_card_image");
 
         $redemption->gold()->associate(Gold::find($request->get("gold_id")));
         $redemption->goldRedemptionPrice()->associate(GoldPrice::find($request->get("gold_redemption_price_id")));
         $redemption->employee()->associate(Employee::find($request->get("employee_id")));
         $redemption->user()->associate(User::find($request->get("user_id")));
-
-        if (($request->id_card_image) != null) {
-            $imageName = time().'.'.$request->id_card_image->extension();
-            $request->image->storeAs('public/images/redemptions', $imageName);
-            $redemption->slip_image = $imageName;
-        }
 
         if ($redemption->save()) {
             return response()->json([
@@ -88,18 +83,13 @@ class RedemptionController extends Controller
         if ($request->has("redemption_date")) $redemption->redemption_date = $request->get("redemption_date");
         if ($request->has("redemption_price")) $redemption->redemption_price = $request->get("redemption_price");
         if ($request->has("check_status")) $redemption->check_status = $request->get("check_status");
-        if ($request->has("note")) $redemption->check_status = $request->get("note");
+        if ($request->has("note")) $redemption->note = $request->get("note");
+        if ($request->has("id_card_image")) $redemption->id_card_image = $request->get("id_card_image");
 
         if ($request->has("gold_id")) $redemption->gold()->associate(Gold::find($request->get("gold_id")));
         if ($request->has("gold_redemption_price_id")) $redemption->goldRedemptionPrice()->associate(GoldPrice::find($request->get("gold_redemption_price_id")));
         if ($request->has("employee_id")) $redemption->employee()->associate(Employee::find($request->get("employee_id")));
         if ($request->has("user_id")) $redemption->user()->associate(User::find($request->get("user_id")));
-
-        if (($request->id_card_image) != null && ($request->has("id_card_image"))) {
-            $imageName = time().'.'.$request->id_card_image->extension();
-            $request->image->storeAs('public/images/redemptions', $imageName);
-            $redemption->slip_image = $imageName;
-        }
 
         if ($redemption->save()) {
             return response()->json([

@@ -59,18 +59,8 @@ class CustomOrderController extends Controller
         if ($request->has("difference_change_amount")) $custom_order->difference_change_amount = $request->get("difference_change_amount");
         if ($request->has("difference_status")) $custom_order->difference_status = $request->get("deposit_status");
         if ($request->has("difference_note")) $custom_order->difference_note = $request->get("difference_note");
-
-        if (($request->deposit_slip_image) != null) {
-            $imageName = time().'.'.$request->deposit_slip_image->extension();
-            $request->image->storeAs('public/images/custom_orders/deposits', $imageName);
-            $custom_order->deposit_slip_image = $imageName;
-        }
-
-        if (($request->difference_slip_image) != null) {
-            $imageName = time().'.'.$request->difference_slip_image->extension();
-            $request->image->storeAs('public/images/custom_orders/differences', $imageName);
-            $custom_order->difference_slip_image = $imageName;
-        }
+        if ($request->has("deposit_slip_image")) $custom_order->deposit_slip_image = $request->get("deposit_slip_image");
+        if ($request->has("difference_slip_image")) $custom_order->difference_slip_image = $request->get("difference_slip_image");
 
         $custom_order->customOrderWorker()->associate(CustomOrderWorker::find($request->get("custom_order_worker_id")));
         $custom_order->goldOrderPrice()->associate(GoldPrice::find($request->get("gold_order_price_id")));
@@ -136,23 +126,13 @@ class CustomOrderController extends Controller
         if ($request->has("difference_change_amount")) $custom_order->difference_change_amount = $request->get("difference_change_amount");
         if ($request->has("difference_status")) $custom_order->difference_status = $request->get("deposit_status");
         if ($request->has("difference_note")) $custom_order->difference_note = $request->get("difference_note");
+        if ($request->has("deposit_slip_image")) $custom_order->deposit_slip_image = $request->get("deposit_slip_image");
+        if ($request->has("difference_slip_image")) $custom_order->difference_slip_image = $request->get("difference_slip_image");
 
         if ($request->has("custom_order_worker_id")) $custom_order->customOrderWorker()->associate(CustomOrderWorker::find($request->get("custom_order_worker_id")));
         if ($request->has("gold_order_price_id")) $custom_order->goldOrderPrice()->associate(GoldPrice::find($request->get("gold_order_price_id")));
         if ($request->has("user_id")) $custom_order->user()->associate(User::find($request->get("user_id")));
         if ($request->has("employee_id")) $custom_order->employee()->associate(Employee::find($request->get("employee_id")));
-
-        if ($request->deposit_slip_image != null && $request->has("deposit_slip_image")) {
-            $imageName = time().'.'.$request->deposit_slip_image->extension();
-            $request->image->storeAs('public/images/custom_orders/deposits', $imageName);
-            $custom_order->deposit_slip_image = $imageName;
-        }
-
-        if ($request->difference_slip_image != null && $request->has("difference_slip_image")) {
-            $imageName = time().'.'.$request->difference_slip_image->extension();
-            $request->image->storeAs('public/images/custom_orders/differences', $imageName);
-            $custom_order->difference_slip_image = $imageName;
-        }
 
         if ($custom_order->save()) {
             return response()->json([

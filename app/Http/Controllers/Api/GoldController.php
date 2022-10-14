@@ -45,23 +45,18 @@ class GoldController extends Controller
         if ($request->has("weight")) $gold->weight = $request->get("weight");
         if ($request->has("custom_weight")) $gold->custom_weight = $request->get("custom_weight");
         if ($request->has("pattern_type")) $gold->pattern_type = $request->get("pattern_type");
-        $gold->size = $request->get("size");
-        $gold->pension_per_piece = $request->get("pension_per_piece");
+        if ($request->has("size")) $gold->size = $request->get("size");
+        if ($request->has("pension_per_piece")) $gold->pension_per_piece = $request->get("pension_per_piece");
         $gold->import_date = $request->get("import_date");
-        $gold->gold_buy_price_wholesale = $request->get("gold_buy_price_wholesale");
+        if ($request->has("gold_buy_price_wholesale")) $gold->gold_buy_price_wholesale = $request->get("gold_buy_price_wholesale");
         if ($request->has("percentage")) $gold->percentage = $request->get("percentage");
-        $gold->brand = $request->get("brand");
+        if ($request->has("image")) $gold->image = $request->get("image");
+        if ($request->has("brand")) $gold->brand = $request->get("brand");
 
         $gold->goldType()->associate(GoldType::find($request->get("gold_type_id")));
         $gold->goldPattern()->associate(GoldPattern::find($request->get("gold_pattern_id")));
         $gold->wholesale()->associate(Wholesale::find($request->get("wholesale_id")));
         $gold->employeeAddStock()->associate(Employee::find($request->get("employee_add_stock_id")));
-
-        if ($request->image != null) {
-            $imageName = time().'.'.$request->image->extension();
-            $request->image->storeAs('public/images/golds', $imageName);
-            $gold->image = $imageName;
-        }
 
         if ($gold->save()) {
             return response()->json([
@@ -107,17 +102,12 @@ class GoldController extends Controller
         if ($request->has("gold_buy_price_wholesale")) $gold->gold_buy_price_wholesale = $request->get("gold_buy_price_wholesale");
         if ($request->has("percentage")) $gold->percentage = $request->get("percentage");
         if ($request->has("brand")) $gold->brand = $request->get("brand");
+        if ($request->has("image")) $gold->image = $request->get("image");
 
         if ($request->has("gold_type_id")) $gold->goldType()->associate(GoldType::find($request->get("gold_type_id")));
         if ($request->has("gold_pattern_id")) $gold->goldPattern()->associate(GoldPattern::find($request->get("gold_pattern_id")));
         if ($request->has("wholesale_id")) $gold->wholesale()->associate(Wholesale::find($request->get("wholesale_id")));
         if ($request->has("employee_add_stock_id")) $gold->employeeAddStock()->associate(Employee::find($request->get("employee_add_stock_id")));
-
-        if (($request->image != null) && ($request->has("image"))){
-            $imageName = time().'.'.$request->image->extension();
-            $request->image->storeAs('public/images/golds', $imageName);
-            $gold->image = $imageName;
-        }
 
         if ($gold->save()) {
             return response()->json([

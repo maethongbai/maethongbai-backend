@@ -20,6 +20,7 @@ class OnsiteSaleResource extends JsonResource
     public function toArray($request)
     {
         return [
+            'id' => $this->id,
             'gold' => new GoldResource(Gold::find($this->gold_id)),
             'sale_date' => $this->sale_date,
             'gold_price' => $this->gold_price,

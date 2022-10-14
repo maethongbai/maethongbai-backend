@@ -45,18 +45,13 @@ class OnsiteSaleController extends Controller
         if ($request->has("transfer_status")) $onsiteSale->transfer_status = $request->get("transfer_status");
         if ($request->has("transfer_note")) $onsiteSale->transfer_note = $request->get("transfer_note");
         if ($request->has("is_switch_gold")) $onsiteSale->is_switch_gold = $request->get("is_switch_gold");
+        if ($request->has("slip_image")) $onsiteSale->slip_image = $request->get("slip_image");
 
         $onsiteSale->gold()->associate(Gold::find($request->get("gold_id")));
         $onsiteSale->goldSellPrice()->associate(GoldPrice::find($request->get("gold_sell_price_id")));
         $onsiteSale->employee()->associate(Employee::find($request->get("employee_id")));
         $onsiteSale->user()->associate(User::find($request->get("user_id")));
         $onsiteSale->redemptionID()->associate(Redemption::find($request->get("redemption_id")));
-
-        if (($request->slip_image) != null) {
-            $imageName = time().'.'.$request->slip_image->extension();
-            $request->image->storeAs('public/images/onsite_sales', $imageName);
-            $onsiteSale->slip_image = $imageName;
-        }
 
         if ($onsiteSale->save()) {
             return response()->json([
@@ -102,18 +97,13 @@ class OnsiteSaleController extends Controller
         if ($request->has("transfer_status")) $onsiteSale->transfer_status = $request->get("transfer_status");
         if ($request->has("transfer_note")) $onsiteSale->transfer_note = $request->get("transfer_note");
         if ($request->has("is_switch_gold")) $onsiteSale->is_switch_gold = $request->get("is_switch_gold");
+        if ($request->has("slip_image")) $onsiteSale->slip_image = $request->get("slip_image");
 
         if ($request->has("gold_id")) $onsiteSale->gold()->associate(Gold::find($request->get("gold_id")));
         if ($request->has("gold_sell_price_id")) $onsiteSale->goldSellPrice()->associate(GoldPrice::find($request->get("gold_sell_price_id")));
         if ($request->has("employee_id")) $onsiteSale->employee()->associate(Employee::find($request->get("employee_id")));
         if ($request->has("user_id")) $onsiteSale->user()->associate(User::find($request->get("user_id")));
         if ($request->has("redemption_id")) $onsiteSale->redemptionID()->associate(Redemption::find($request->get("redemption_id")));
-
-        if (($request->slip_image) != null && ($request->has("slip_image"))) {
-            $imageName = time().'.'.$request->slip_image->extension();
-            $request->image->storeAs('public/images/onsite_sales', $imageName);
-            $onsiteSale->slip_image = $imageName;
-        }
 
         if ($onsiteSale->save()) {
             return response()->json([

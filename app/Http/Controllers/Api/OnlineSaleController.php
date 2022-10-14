@@ -41,7 +41,7 @@ class OnlineSaleController extends Controller
         if ($request->has("additional_note")) $onlineSale->additional_note = $request->get("additional_note");
         if ($request->has("delivery_status")) $onlineSale->delivery_status = $request->get("delivery_status");
         if ($request->has("tracking_number")) $onlineSale->tracking_number = $request->get("tracking_number");
-
+        if ($request->has("slip_image")) $onlineSale->slip_image = $request->get("slip_image");
         $onlineSale->amount = $request->get("amount");
         if ($request->has("note")) $onlineSale->note = $request->get("note");
 
@@ -50,12 +50,6 @@ class OnlineSaleController extends Controller
         $onlineSale->user()->associate(User::find($request->get("user_id")));
         if ($request->has("tracking_id_employee_id")) $onlineSale->trackingIDEmployee()->associate(Employee::find($request->get("tracking_id_employee_id")));
         if ($request->has("delivery_status_employee_id")) $onlineSale->deliveryStatusEmployee()->associate(Employee::find($request->get("delivery_status_employee_id")));
-
-        if (($request->slip_image) != null) {
-            $imageName = time().'.'.$request->slip_image->extension();
-            $request->image->storeAs('public/images/online_sales', $imageName);
-            $onlineSale->slip_image = $imageName;
-        }
 
         if ($onlineSale->save()) {
             return response()->json([
@@ -100,18 +94,13 @@ class OnlineSaleController extends Controller
         if ($request->has("delivery_status")) $onlineSale->delivery_status = $request->get("delivery_status");
         if ($request->has("tracking_number")) $onlineSale->tracking_number = $request->get("tracking_number");
         if ($request->has("note")) $onlineSale->note = $request->get("note");
+        if ($request->has("slip_image")) $onlineSale->slip_image = $request->get("slip_image");
 
         if ($request->has("gold_id")) $onlineSale->gold()->associate(Gold::find($request->get("gold_id")));
         if ($request->has("gold_sell_price_id")) $onlineSale->goldSellPrice()->associate(GoldPrice::find($request->get("gold_sell_price_id")));
         if ($request->has("user_id")) $onlineSale->user()->associate(User::find($request->get("user_id")));
         if ($request->has("tracking_id_employee_id")) $onlineSale->trackingIDEmployee()->associate(Employee::find($request->get("tracking_id_employee_id")));
         if ($request->has("delivery_status_employee_id")) $onlineSale->deliveryStatusEmployee()->associate(Employee::find($request->get("delivery_status_employee_id")));
-
-        if (($request->slip_image) != null && ($request->has("slip_image"))) {
-            $imageName = time().'.'.$request->slip_image->extension();
-            $request->image->storeAs('public/images/online_sales', $imageName);
-            $onlineSale->slip_image = $imageName;
-        }
 
         if ($onlineSale->save()) {
             return response()->json([

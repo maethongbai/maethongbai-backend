@@ -25,7 +25,7 @@ return new class extends Migration
             $table->foreignIdFor(GoldType::class, "gold_type_id")->nullable(); // รหัสประเภท
             $table->string("weight")->nullable()->default(null); // น้ำหนัก
             $table->double("custom_weight")->nullable()->default(null); // น้ำหนักตามชั่ง
-            $table->string("pattern_type"); // ประเภทของลาย (ตัน โป่ง)
+            $table->string("pattern_type")->nullable(); // ประเภทของลาย (ตัน โป่ง)
             $table->foreignIdFor(GoldPattern::class, "gold_pattern_id")->nullable(); // รหัสลาย
             $table->string("size")->nullable(); // ขนาด
             $table->double("pension_per_piece")->nullable(); // ค่าบำเหน็จต่อชิ้น

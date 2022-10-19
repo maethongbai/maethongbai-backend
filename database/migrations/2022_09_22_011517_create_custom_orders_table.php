@@ -41,8 +41,8 @@ return new class extends Migration
             $table->string("difference_payment_method")->nullable()->default(null);
             $table->string("difference_credit_card_type")->nullable()->default(null);
             $table->string("difference_bank_name")->nullable()->default(null);
-            $table->double("difference_paid_amount")->default(null);
-            $table->double("difference_change_amount")->default(null);
+            $table->double("difference_paid_amount")->nullable()->default(null);
+            $table->double("difference_change_amount")->nullable()->default(null);
             $table->mediumText("difference_slip_image")->nullable()->default(null);
             $table->string("difference_status")->default("ยังไม่ได้ตรวจสอบ");
             $table->string("difference_note")->nullable()->default(null);

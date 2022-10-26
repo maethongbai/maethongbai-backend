@@ -8,6 +8,7 @@ use App\Models\Employee;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -32,7 +33,7 @@ class UserController extends Controller
     {
         $user = new User();
         if ($request->has("email")) $user->email = $request->get("email");
-        $user->password = $request->get("password");
+        $user->password = Hash::make($request->get("password"));
         $user->name_prefix = $request->get("name_prefix");
         $user->first_name = $request->get("first_name");
         $user->last_name = $request->get("last_name");
@@ -76,7 +77,7 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         if ($request->has("email")) $user->email = $request->get("email");
-        if ($request->has("password")) $user->password = $request->get("password");
+        if ($request->has("password")) $user->password = Hash::make($request->get("password"));
         if ($request->has("name_prefix")) $user->name_prefix = $request->get("name_prefix");
         if ($request->has("first_name")) $user->first_name = $request->get("first_name");
         if ($request->has("last_name")) $user->last_name = $request->get("last_name");

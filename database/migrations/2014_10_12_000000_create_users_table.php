@@ -17,7 +17,7 @@ return new class extends Migration
         // ผู้ใช้
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('username')->unique()->default(fake()->unique()->userName());
+            $table->string('username')->default(fake()->unique()->userName());
             $table->string('email')->unique()->nullable(); // อีเมล
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

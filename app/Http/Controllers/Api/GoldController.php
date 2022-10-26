@@ -46,6 +46,7 @@ class GoldController extends Controller
         if ($request->has("custom_weight")) $gold->custom_weight = $request->get("custom_weight");
         if ($request->has("pattern_type")) $gold->pattern_type = $request->get("pattern_type");
         if ($request->has("size")) $gold->size = $request->get("size");
+        if ($request->has("is_sold")) $gold->is_sold = $request->get("is_sold");
         if ($request->has("pension_per_piece")) $gold->pension_per_piece = $request->get("pension_per_piece");
         $gold->import_date = $request->get("import_date");
         if ($request->has("gold_buy_price_wholesale")) $gold->gold_buy_price_wholesale = $request->get("gold_buy_price_wholesale");
@@ -97,6 +98,7 @@ class GoldController extends Controller
         if ($request->has("custom_weight")) $gold->custom_weight = $request->get("custom_weight");
         if ($request->has("pattern_type")) $gold->pattern_type = $request->get("pattern_type");
         if ($request->has("size")) $gold->size = $request->get("size");
+        if ($request->has("is_sold")) $gold->is_sold = $request->get("is_sold");
         if ($request->has("pension_per_piece")) $gold->pension_per_piece = $request->get("pension_per_piece");
         if ($request->has("import_date")) $gold->import_date = $request->get("import_date");
         if ($request->has("gold_buy_price_wholesale")) $gold->gold_buy_price_wholesale = $request->get("gold_buy_price_wholesale");

@@ -33,11 +33,13 @@ return new class extends Migration
             $table->foreignIdFor(Wholesale::class, "wholesale_id")->nullable(); // รหัสร้านขายส่ง
             $table->integer("gold_buy_price_wholesale")->nullable();// ราคาทองตอนซื้อจากร้านขายส่ง
             $table->string("stock_approval_status")->default("รออนุมัติ"); // สถานะอนุมัติลง stock (รออนุมัติ อนุมัติ ไม่อนุมัติ)
+            $table->boolean("is_sold")->default(false); // ขายทองรึยัง (true/false) true = ขายที่ร้านไปแล้ว
             $table->string("percentage")->default("96.5% รูปพรรณ"); // เปอร์เซนต์ทอง
             $table->string("brand")->nullable(); // ยี่ห้อทอง กรณีรับซื้อจากลูกค้า
             $table->mediumText("image")->nullable()->default(null); // รูป
             $table->foreignIdFor(Employee::class,"employee_add_stock_id")->nullable();//พนักงานที่เพิ่มทองลงstock
             $table->timestamps();
+            // check stock => name != null && is_sold == false && stock_approval_status == "อนุมัติ"
         });
     }
 

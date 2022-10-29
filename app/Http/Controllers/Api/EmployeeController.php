@@ -40,7 +40,7 @@ class EmployeeController extends Controller
             return response()->json([
                 "success" => true,
                 "message" => "Created employee id: " . $employee->id,
-                "gold_id" => $employee->id
+                "employee_id" => $employee->id
             ], Response::HTTP_CREATED);
         } else {
             return response()->json([

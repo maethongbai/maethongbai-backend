@@ -38,6 +38,8 @@ class UserController extends Controller
         $user->first_name = $request->get("first_name");
         $user->last_name = $request->get("last_name");
         $user->phone = $request->get("phone");
+        if ($request->has("role")) $user->role = $request->get("role");
+        if ($request->has("employee_id")) $user->employee_id = $request->get("employee_id");
         if ($request->has("id_card_number")) $user->id_card_number = $request->get("id_card_number");
         if ($request->has("address")) $user->address = $request->get("address");
 

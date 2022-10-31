@@ -642,6 +642,7 @@ class GoldSeeder extends Seeder
             $obj->brand = "ชมพู";
             $obj->image = "no image, will set up later";
             $obj->percentage = "96.5% ทองแท่ง";
+            $obj->stock_approval_status = "อนุมัติ";
             $obj->save();
 
             $ins = GoldType::where("id",8)->first();
@@ -660,6 +661,7 @@ class GoldSeeder extends Seeder
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = "ชมพู";
             $obj->image = "no image, will set up later";
+            $obj->stock_approval_status = "อนุมัติ";
             $obj->percentage = "96.5% ทองแท่ง";
             $obj->save();
 

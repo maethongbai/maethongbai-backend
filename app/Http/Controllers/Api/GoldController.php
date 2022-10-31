@@ -57,7 +57,7 @@ class GoldController extends Controller
 
         $gold->goldType()->associate(GoldType::find($request->get("gold_type_id")));
         $gold->goldPattern()->associate(GoldPattern::find($request->get("gold_pattern_id")));
-        if ($request->has("wholesale")) $gold->wholesale()->associate(Wholesale::find($request->get("wholesale_id")));
+        if ($request->has("wholesale_id")) $gold->wholesale()->associate(Wholesale::find($request->get("wholesale_id")));
         $gold->employeeAddStock()->associate(Employee::find($request->get("employee_add_stock_id")));
 
         if ($gold->save()) {
@@ -105,6 +105,7 @@ class GoldController extends Controller
         if ($request->has("import_date")) $gold->import_date = $request->get("import_date");
         if ($request->has("gold_buy_price_wholesale")) $gold->gold_buy_price_wholesale = $request->get("gold_buy_price_wholesale");
         if ($request->has("percentage")) $gold->percentage = $request->get("percentage");
+        if ($request->has("stock_approval_status")) $gold->stock_approval_status = $request->get("stock_approval_status");
         if ($request->has("brand")) $gold->brand = $request->get("brand");
         if ($request->has("image")) $gold->image = $request->get("image");
 

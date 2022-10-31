@@ -487,7 +487,7 @@ class GoldSeeder extends Seeder
         if (!$obj) {
             $obj = new Gold();
             $obj->name = "แหวนปอกมีด 1 บาท";
-            $obj->weight = "1 baht";
+            $obj->custom_weight = 15.16;
             $obj->pattern_type = "ทองตัน";
             $obj->size = "52";
             $obj->pension_per_piece = null;

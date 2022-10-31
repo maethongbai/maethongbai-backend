@@ -38,6 +38,7 @@ class GoldResource extends JsonResource
             'percentage' => $this->percentage,
             'brand' => $this->brand,
             'is_sold' => $this->is_sold,
+            'is_redemption' => $this->is_redemption,
             'image' => $this->image,
             'employee_add_stock' => Employee::find($this->employee_add_stock_id)
         ];

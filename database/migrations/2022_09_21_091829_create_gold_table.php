@@ -34,6 +34,7 @@ return new class extends Migration
             $table->integer("gold_buy_price_wholesale")->nullable();// ราคาทองตอนซื้อจากร้านขายส่ง
             $table->string("stock_approval_status")->default("รออนุมัติ"); // สถานะอนุมัติลง stock (รออนุมัติ อนุมัติ ไม่อนุมัติ)
             $table->boolean("is_sold")->default(false); // ขายทองรึยัง (true/false) true = ขายที่ร้านไปแล้ว
+            $table->boolean("is_redemption")->default(false); // เป็นทองรับซื้อหรือไม่ (true/false) true = รับซื้อ
             $table->string("percentage")->default("96.5% รูปพรรณ"); // เปอร์เซนต์ทอง
             $table->string("brand")->nullable(); // ยี่ห้อทอง กรณีรับซื้อจากลูกค้า
             $table->mediumText("image")->nullable()->default(null); // รูป

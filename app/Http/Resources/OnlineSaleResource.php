@@ -25,6 +25,7 @@ class OnlineSaleResource extends JsonResource
             'slip_image' => $this->slip_image,
             'transfer_status' => $this->transfer_status,
             'transfer_note' => $this->transfer_note,
+            'gold_price' => $this->gold_price,
             'additional_note' => $this->additional_note,
             'gold_sell_price' => GoldPrice::find($this->gold_sell_price_id),
             'amount' => $this->amount,

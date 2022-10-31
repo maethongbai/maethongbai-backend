@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string("name");
             $table->double("amount");
             $table->foreignIdFor(\App\Models\Employee::class, "employee_id")->nullable();
+            $table->foreignIdFor(\App\Models\Employee::class, "withdrawals_employee_id")->nullable();
             $table->date("withdrawal_date");
             $table->string("withdrawal_status")->default("รออนุมัติ");
             $table->timestamps();

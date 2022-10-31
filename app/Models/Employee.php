@@ -44,4 +44,8 @@ class Employee extends Model
     public function golds() {
         return $this->hasMany(Gold::class, "employee_add_stock_id", "id");
     }
+
+    public function withdrawalsEmployee() {
+        return $this->hasMany(Withdrawal::class, "withdrawals_employee_id", "id");
+    }
 }

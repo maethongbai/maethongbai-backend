@@ -20,6 +20,7 @@ class WithdrawalResource extends JsonResource
             'name' => $this->name,
             'amount' => $this->amount,
             'employee' => Employee::find($this->employee_id),
+            'employee_withdrawal' => Employee::find($this->withdrawals_employee_id),
             'withdrawal_date' => $this->withdrawal_date,
             'withdrawal_status' => $this->withdrawal_status
         ];

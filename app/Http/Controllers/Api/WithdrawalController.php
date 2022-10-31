@@ -37,6 +37,7 @@ class WithdrawalController extends Controller
         if ($request->has("withdrawal_status")) $withdrawal->withdrawal_status = $request->get("withdrawal_status");
 
         $withdrawal->employee()->associate(Employee::find($request->get("employee_id")));
+        $withdrawal->withdrawalEmployee()->associate(Employee::find($request->get("withdrawals_employee_id")));
 
         if ($withdrawal->save()) {
             return response()->json([
@@ -79,6 +80,7 @@ class WithdrawalController extends Controller
         if ($request->has("withdrawal_status")) $withdrawal->withdrawal_status = $request->get("withdrawal_status");
 
         if ($request->has("employee_id")) $withdrawal->employee()->associate(Employee::find($request->get("employee_id")));
+        if ($request->has("withdrawals_employee_id")) $withdrawal->withdrawalEmployee()->associate(Employee::find($request->get("withdrawals_employee_id")));
 
         if ($withdrawal->save()) {
             return response()->json([

@@ -76,6 +76,7 @@ class OnsiteSaleSeeder extends Seeder
             $obj->payment_method = "transfer";
             $obj->slip_image = "photo";
             $obj->transfer_status = "ยืนยัน";
+            $obj->is_cancel_bill = true;
             $obj->save();
 
             $ins = Gold::where("id", 13)->first();

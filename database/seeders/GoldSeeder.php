@@ -474,6 +474,7 @@ class GoldSeeder extends Seeder
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = "ชมพู";
             $obj->image = "no image, will set up later";
+            $obj->is_redemption = true;
             $obj->save();
 
             $ins = GoldType::where("id",2)->first();
@@ -494,6 +495,7 @@ class GoldSeeder extends Seeder
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = "ลายกนก";
             $obj->image = "no image, will set up later";
+            $obj->is_redemption = true;
             $obj->save();
 
             $ins = GoldType::where("id",1)->first();
@@ -514,6 +516,7 @@ class GoldSeeder extends Seeder
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = "บ้านช่างทอง";
             $obj->image = "no image, will set up later";
+            $obj->is_redemption = true;
             $obj->save();
 
             $ins = GoldType::where("id",2)->first();
@@ -534,6 +537,7 @@ class GoldSeeder extends Seeder
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = "จินไท้เฮง";
             $obj->image = "no image, will set up later";
+            $obj->is_redemption = true;
             $obj->save();
 
             $ins = GoldType::where("id",3)->first();
@@ -555,6 +559,7 @@ class GoldSeeder extends Seeder
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = "โต๊ะกัง";
             $obj->image = "no image, will set up later";
+            $obj->is_redemption = true;
             $obj->save();
 
             $ins = GoldType::where("id",2)->first();
@@ -576,6 +581,7 @@ class GoldSeeder extends Seeder
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = "ลายกนก";
             $obj->image = "no image, will set up later";
+            $obj->is_redemption = true;
             $obj->save();
 
             $ins = GoldType::where("id",1)->first();
@@ -596,6 +602,7 @@ class GoldSeeder extends Seeder
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = "วิทเฮงหลี";
             $obj->image = "no image, will set up later";
+            $obj->is_redemption = true;
             $obj->save();
 
             $ins = GoldType::where("id",1)->first();
@@ -618,6 +625,7 @@ class GoldSeeder extends Seeder
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = "ชมพู";
             $obj->image = "no image, will set up later";
+            $obj->is_redemption = true;
             $obj->save();
 
             $ins = GoldType::where("id",5)->first();
@@ -643,6 +651,7 @@ class GoldSeeder extends Seeder
             $obj->image = "no image, will set up later";
             $obj->percentage = "96.5% ทองแท่ง";
             $obj->stock_approval_status = "อนุมัติ";
+            $obj->is_redemption = true;
             $obj->save();
 
             $ins = GoldType::where("id",8)->first();
@@ -663,6 +672,7 @@ class GoldSeeder extends Seeder
             $obj->image = "no image, will set up later";
             $obj->stock_approval_status = "อนุมัติ";
             $obj->percentage = "96.5% ทองแท่ง";
+            $obj->is_redemption = true;
             $obj->save();
 
             $ins = GoldType::where("id",8)->first();
@@ -684,6 +694,7 @@ class GoldSeeder extends Seeder
             $obj->gold_buy_price_wholesale = 31100;
             $obj->image = "no image, will set up later";
             $obj->stock_approval_status = "อนุมัติ";
+            $obj->is_sold = true;
             $obj->save();
 
             $ins = GoldType::where("id",1)->first();

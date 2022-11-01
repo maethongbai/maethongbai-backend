@@ -27,6 +27,9 @@ class WithdrawalSeeder extends Seeder
 
             $ins = Employee::where("id", 1)->first();
             $ins->withdrawals()->save($obj);
+
+            $ins = Employee::where("id", 3)->first();
+            $ins->withdrawalsEmployee()->save($obj);
         }
 
         $obj = Withdrawal::where("id", 2)->first();
@@ -39,6 +42,9 @@ class WithdrawalSeeder extends Seeder
 
             $ins = Employee::where("id", 2)->first();
             $ins->withdrawals()->save($obj);
+
+            $ins = Employee::where("id", 7)->first();
+            $ins->withdrawalsEmployee()->save($obj);
         }
 
         $obj = Withdrawal::where("id", 3)->first();
@@ -52,6 +58,9 @@ class WithdrawalSeeder extends Seeder
 
             $ins = Employee::where("id", 3)->first();
             $ins->withdrawals()->save($obj);
+
+            $ins = Employee::where("id", 8)->first();
+            $ins->withdrawalsEmployee()->save($obj);
         }
 
         $obj = Withdrawal::where("id", 4)->first();
@@ -65,6 +74,9 @@ class WithdrawalSeeder extends Seeder
 
             $ins = Employee::where("id", 4)->first();
             $ins->withdrawals()->save($obj);
+
+            $ins = Employee::where("id", 3)->first();
+            $ins->withdrawalsEmployee()->save($obj);
         }
 
         $obj = Withdrawal::where("id", 5)->first();
@@ -78,6 +90,9 @@ class WithdrawalSeeder extends Seeder
 
             $ins = Employee::where("id", 5)->first();
             $ins->withdrawals()->save($obj);
+
+            $ins = Employee::where("id", 7)->first();
+            $ins->withdrawalsEmployee()->save($obj);
         }
 
         $obj = Withdrawal::where("id", 6)->first();
@@ -90,6 +105,9 @@ class WithdrawalSeeder extends Seeder
 
             $ins = Employee::where("id", 4)->first();
             $ins->withdrawals()->save($obj);
+
+            $ins = Employee::where("id", 8)->first();
+            $ins->withdrawalsEmployee()->save($obj);
         }
 
     }

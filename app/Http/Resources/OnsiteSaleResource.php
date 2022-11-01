@@ -34,6 +34,7 @@ class OnsiteSaleResource extends JsonResource
             'transfer_status' => $this->transfer_status,
             'transfer_note' => $this->transfer_note,
             'is_switch_gold' => $this->is_switch_gold,
+            'is_cancel_bill' => $this->is_cancel_bill,
             'employee' => Employee::find($this->employee_id),
             'user' => new UserResource(User::find($this->user_id)),
             'redemption' => new RedemptionResource(Redemption::find($this->redemption_id))

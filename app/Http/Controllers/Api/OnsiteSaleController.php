@@ -45,6 +45,7 @@ class OnsiteSaleController extends Controller
         if ($request->has("transfer_status")) $onsiteSale->transfer_status = $request->get("transfer_status");
         if ($request->has("transfer_note")) $onsiteSale->transfer_note = $request->get("transfer_note");
         if ($request->has("is_switch_gold")) $onsiteSale->is_switch_gold = $request->get("is_switch_gold");
+        if ($request->has("is_cancel_bill")) $onsiteSale->is_switch_gold = $request->get("is_cancel_bill");
         if ($request->has("slip_image")) $onsiteSale->slip_image = $request->get("slip_image");
 
         $onsiteSale->gold()->associate(Gold::find($request->get("gold_id")));

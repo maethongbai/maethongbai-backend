@@ -34,6 +34,7 @@ return new class extends Migration
             $table->foreignIdFor(GoldPrice::class, "gold_sell_price_id")->nullable();
             $table->string("transfer_status")->default("ยังไม่ได้ตรวจสอบ");
             $table->string("transfer_note")->nullable()->default(null);
+            $table->boolean("is_cancel_bill")->default(false); //เป็นรายการที่ถูกยกเลิกหรือไม่
             $table->boolean("is_switch_gold")->default(false); // เป็นทองเปลี่ยนหรือไม่
             $table->foreignIdFor(Employee::class,"employee_id")->nullable();
             $table->foreignIdFor(User::class,"user_id")->nullable();

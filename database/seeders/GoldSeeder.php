@@ -87,6 +87,7 @@ class GoldSeeder extends Seeder
             $obj->pension_per_piece = 350;
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = null;
+            $obj->is_sold = true;
             $obj->gold_buy_price_wholesale = 30000;
             $obj->image = "no image, will set up later";
             $obj->stock_approval_status = "อนุมัติ";
@@ -145,6 +146,7 @@ class GoldSeeder extends Seeder
             $obj->pension_per_piece = 250;
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = null;
+            $obj->is_sold = true;
             $obj->gold_buy_price_wholesale = 30500;
             $obj->image = "no image, will set up later";
             $obj->stock_approval_status = "อนุมัติ";
@@ -175,6 +177,7 @@ class GoldSeeder extends Seeder
             $obj->pension_per_piece = 150;
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = null;
+            $obj->is_sold = true;
             $obj->gold_buy_price_wholesale = 29500;
             $obj->image = "no image, will set up later";
             $obj->stock_approval_status = "อนุมัติ";
@@ -205,6 +208,7 @@ class GoldSeeder extends Seeder
             $obj->pension_per_piece = 250;
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = null;
+            $obj->is_sold = true;
             $obj->gold_buy_price_wholesale = 30000;
             $obj->image = "no image, will set up later";
             $obj->stock_approval_status = "อนุมัติ";
@@ -323,6 +327,7 @@ class GoldSeeder extends Seeder
             $obj->pension_per_piece = 150;
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = null;
+            $obj->is_sold = true;
             $obj->gold_buy_price_wholesale = 29150;
             $obj->image = "no image, will set up later";
             $obj->stock_approval_status = "อนุมัติ";
@@ -354,6 +359,7 @@ class GoldSeeder extends Seeder
             $obj->pension_per_piece = 450;
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = null;
+            $obj->is_sold = true;
             $obj->gold_buy_price_wholesale = 31250;
             $obj->image = "no image, will set up later";
             $obj->stock_approval_status = "อนุมัติ";
@@ -385,6 +391,7 @@ class GoldSeeder extends Seeder
             $obj->pension_per_piece = 150;
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = null;
+            $obj->is_sold = true;
             $obj->gold_buy_price_wholesale = 29850;
             $obj->image = "no image, will set up later";
             $obj->stock_approval_status = "อนุมัติ";
@@ -710,5 +717,38 @@ class GoldSeeder extends Seeder
             $ins->golds()->save($obj);
 
         }
+
+        $obj = Gold::where("id",27)->first();//จากร้านขายส่ง อนุมัติ
+        if (!$obj) {
+            $obj = new Gold();
+            $obj->name = "แหวนตัดเหลี่ยม 2 สลึง";
+            $obj->weight = "2 สลึง";
+            $obj->pattern_type = "ทองโป่ง";
+            $obj->size = "54";
+            $obj->pension_per_piece = 150;
+            $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
+            $obj->brand = null;
+            $obj->is_sold = true;
+            $obj->gold_buy_price_wholesale = 29150;
+            $obj->image = "no image, will set up later";
+            $obj->stock_approval_status = "อนุมัติ";
+            $obj->save();
+
+            $ins = GoldType::where("id",1)->first();
+            $ins->golds()->save($obj);
+
+            $ins = GoldPattern::where("id",10)->first();
+            $ins->golds()->save($obj);
+
+            $ins = Wholesale::where("id",6)->first();
+            $ins->golds()->save($obj);
+
+            $ins = Employee::where("id",1)->first();
+            $ins->golds()->save($obj);
+
+
+
+        }
     }
+
 }

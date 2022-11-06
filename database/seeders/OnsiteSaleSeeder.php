@@ -102,7 +102,7 @@ class OnsiteSaleSeeder extends Seeder
             $obj->paid_change = 4050;
             $obj->save();
 
-            $ins = Gold::where("id", 11)->first();
+            $ins = Gold::where("id", 27)->first();
             $ins->onsiteSales()->save($obj);
 
             $ins = GoldPrice::where("id", 3)->first();

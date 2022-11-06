@@ -25,11 +25,16 @@
 ```
 sail up -d
 sail npm install
+sail artisan migrate
+```
+ถ้าต้องการข้อมูลเริ่มต้น
+```
 sail artisan migrate:fresh --seed
 ```
 
 ## คำแนะนำในการรันโปรเจคหรือการเข้าถึงหน้าเว็บไซต์
-http://localhost
+- ใช้ `http://localhost/api/[table]` เพื่อแสดงข้อมูลใน table ทั้งหมด เช่น http://localhost/api/golds
+- ใช้ `http://localhost/api/[table]/[id]` เพื่อแสดงข้อมูลของ id นั้นๆ ใน table  เช่น http://localhost/api/golds/1
 
 ## ระบุ release tag ของโปรเจคที่สมบูรณ์ ใช้ในการนำเสนอ
 ยังไม่มี (สร้าง git tag -> กำหนด release) ในหน้า github

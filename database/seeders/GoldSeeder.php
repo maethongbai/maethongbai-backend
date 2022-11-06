@@ -26,7 +26,7 @@ class GoldSeeder extends Seeder
             $obj->name = "สร้อยคอซีตรอง 1 บาท";
             $obj->weight = "1 บาท";
             $obj->pattern_type = "ทองตัน";
-            $obj->size = "43cm";
+            $obj->size = "43";
             $obj->pension_per_piece = 250;
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->gold_buy_price_wholesale = 28000;
@@ -83,7 +83,7 @@ class GoldSeeder extends Seeder
             $obj->name = "สร้อยมือโซ่ฝรั่ง 2 บาท";
             $obj->weight = "2 บาท";
             $obj->pattern_type = "ทองโป่ง";
-            $obj->size = "19cm";
+            $obj->size = "19";
             $obj->pension_per_piece = 350;
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = null;
@@ -113,7 +113,7 @@ class GoldSeeder extends Seeder
             $obj->name = "กำไลตะปู 2 บาท";
             $obj->weight = "2 บาท";
             $obj->pattern_type = "ทองตัน";
-            $obj->size = "20cm";
+            $obj->size = "20";
             $obj->pension_per_piece = 500;
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = null;
@@ -142,7 +142,7 @@ class GoldSeeder extends Seeder
             $obj->name = "สร้อยคอสี่เสา 3 บาท";
             $obj->weight = "3 บาท";
             $obj->pattern_type = "ทองตัน";
-            $obj->size = "60cm";
+            $obj->size = "60";
             $obj->pension_per_piece = 250;
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = null;
@@ -173,7 +173,7 @@ class GoldSeeder extends Seeder
             $obj->name = "จี้หัวใจ 5 หุน";
             $obj->weight = "5 หุน";
             $obj->pattern_type = "ทองโป่ง";
-            $obj->size = "5cm";
+            $obj->size = "5";
             $obj->pension_per_piece = 150;
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = null;
@@ -204,7 +204,7 @@ class GoldSeeder extends Seeder
             $obj->name = "ต่างหูดอกไม้ 1 สลึง";
             $obj->weight = "1 สลึง";
             $obj->pattern_type = "ทองโป่ง";
-            $obj->size = "3cm";
+            $obj->size = "3";
             $obj->pension_per_piece = 250;
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = null;
@@ -235,7 +235,7 @@ class GoldSeeder extends Seeder
             $obj->name = "สร้อยข้อเท้าเด็กซีตรอง 2 สลึง";
             $obj->weight = "2 สลึง";
             $obj->pattern_type = "ทองโป่ง";
-            $obj->size = "8cm";
+            $obj->size = "8";
             $obj->pension_per_piece = 150;
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = null;
@@ -265,7 +265,7 @@ class GoldSeeder extends Seeder
             $obj->name = "สร้อบคอกระดูกงู 5 บาท";
             $obj->weight = "5 บาท";
             $obj->pattern_type = "ทองตัน";
-            $obj->size = "50cm";
+            $obj->size = "50";
             $obj->pension_per_piece = 200;
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = null;
@@ -294,7 +294,7 @@ class GoldSeeder extends Seeder
             $obj->name = "สร้อยมือบิดนูน 1 บาท";
             $obj->weight = "1 บาท";
             $obj->pattern_type = "ทองตัน";
-            $obj->size = "23cm";
+            $obj->size = "23";
             $obj->pension_per_piece = 280;
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = null;
@@ -355,7 +355,7 @@ class GoldSeeder extends Seeder
             $obj->name = "กำไลตุ้งติ้ง 3 บาท";
             $obj->weight = "3 บาท";
             $obj->pattern_type = "ทองโป่ง";
-            $obj->size = "25cm";
+            $obj->size = "25";
             $obj->pension_per_piece = 450;
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = null;
@@ -387,7 +387,7 @@ class GoldSeeder extends Seeder
             $obj->name = "สร้อยมือคตกริต 2 บาท";
             $obj->weight = "2 บาท";
             $obj->pattern_type = "ทองตัน";
-            $obj->size = "24cm";
+            $obj->size = "24";
             $obj->pension_per_piece = 150;
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = null;
@@ -417,7 +417,7 @@ class GoldSeeder extends Seeder
             $obj->name = "สร้อยมือคตกริต 2 บาท";
             $obj->weight = "2 บาท";
             $obj->pattern_type = "ทองตัน";
-            $obj->size = "20cm";
+            $obj->size = "20";
             $obj->pension_per_piece = 150;
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = null;
@@ -476,7 +476,7 @@ class GoldSeeder extends Seeder
             $obj->name = "สร้อยคอคตกรีด 1 บาท";
             $obj->weight = "1 บาท";
             $obj->pattern_type = "ทองตัน";
-            $obj->size = "45cm";
+            $obj->size = "45";
             $obj->pension_per_piece = null;
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = "ชมพู";
@@ -518,7 +518,7 @@ class GoldSeeder extends Seeder
             $obj->name = "สร้อยคอดิสโก้ 2 บาท";
             $obj->weight = "2 บาท";
             $obj->pattern_type = "ทองตัน";
-            $obj->size = "50cm";
+            $obj->size = "50";
             $obj->pension_per_piece = null;
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = "บ้านช่างทอง";
@@ -539,7 +539,7 @@ class GoldSeeder extends Seeder
             $obj->name = "สร้อยมือตุ้งติ้ง 2 บาท";
             $obj->weight = "2 บาท";
             $obj->pattern_type = "ทองโป่ง";
-            $obj->size = "25cm";
+            $obj->size = "25";
             $obj->pension_per_piece = null;
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = "จินไท้เฮง";
@@ -561,7 +561,7 @@ class GoldSeeder extends Seeder
             $obj->name = "สร้อยคอซีตรองคั่นปล้อง 1 บาท";
             $obj->weight = "1 บาท";
             $obj->pattern_type = "ทองตัน";
-            $obj->size = "53cm";
+            $obj->size = "53";
             $obj->pension_per_piece = null;
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = "โต๊ะกัง";
@@ -581,7 +581,7 @@ class GoldSeeder extends Seeder
         if (!$obj) {
             $obj = new Gold();
             $obj->name = "แหวนปอกมีด 1 บาท";
-            $obj->weight = "1 baht";
+            $obj->weight = "1 บาท";
             $obj->pattern_type = "ทองตัน";
             $obj->size = "60";
             $obj->pension_per_piece = null;
@@ -627,7 +627,7 @@ class GoldSeeder extends Seeder
             $obj->name = "จี้หัวใจ 1 สลึง";
             $obj->weight = "1 สลึง";
             $obj->pattern_type = "ทองโป่ง";
-            $obj->size = "3cm";
+            $obj->size = "3";
             $obj->pension_per_piece = null;
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = "ชมพู";
@@ -651,7 +651,7 @@ class GoldSeeder extends Seeder
             $obj->name = "ทองแท่ง 1 บาท";
             $obj->weight = "1 บาท";
             $obj->pattern_type = "ทองตัน";
-            $obj->size = "3cm";
+            $obj->size = "3";
             $obj->pension_per_piece = null;
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = "ชมพู";
@@ -672,7 +672,7 @@ class GoldSeeder extends Seeder
             $obj->name = "ทองแท่ง 1 บาท";
             $obj->weight = "1 บาท";
             $obj->pattern_type = "ทองตัน";
-            $obj->size = "3cm";
+            $obj->size = "3";
             $obj->pension_per_piece = null;
             $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
             $obj->brand = "ชมพู";
@@ -747,6 +747,64 @@ class GoldSeeder extends Seeder
             $ins->golds()->save($obj);
 
 
+
+        }
+
+        $obj = Gold::where("id",28)->first();//จากร้านขายส่ง อนุมัติ
+        if (!$obj) {
+            $obj = new Gold();
+            $obj->name = "แหวนตัดเหลี่ยม 2 สลึง";
+            $obj->weight = "2 สลึง";
+            $obj->pattern_type = "ทองโป่ง";
+            $obj->size = "54";
+            $obj->pension_per_piece = 150;
+            $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
+            $obj->brand = null;
+            $obj->gold_buy_price_wholesale = 25000;
+            $obj->image = "no image, will set up later";
+            $obj->stock_approval_status = "อนุมัติ";
+            $obj->save();
+
+            $ins = GoldType::where("id",1)->first();
+            $ins->golds()->save($obj);
+
+            $ins = GoldPattern::where("id",10)->first();
+            $ins->golds()->save($obj);
+
+            $ins = Wholesale::where("id",6)->first();
+            $ins->golds()->save($obj);
+
+            $ins = Employee::where("id",1)->first();
+            $ins->golds()->save($obj);
+
+        }
+
+        $obj = Gold::where("id",29)->first();//จากร้านขายส่ง อนุมัติ
+        if (!$obj) {
+            $obj = new Gold();
+            $obj->name = "สร้อยมือโซ่ฝรั่ง 2 บาท";
+            $obj->weight = "2 บาท";
+            $obj->pattern_type = "ทองโป่ง";
+            $obj->size = "19";
+            $obj->pension_per_piece = 350;
+            $obj->import_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
+            $obj->brand = null;
+            $obj->gold_buy_price_wholesale = 30000;
+            $obj->image = "no image, will set up later";
+            $obj->stock_approval_status = "อนุมัติ";
+            $obj->save();
+
+            $ins = GoldType::where("id",3)->first();
+            $ins->golds()->save($obj);
+
+            $ins = GoldPattern::where("id",4)->first();
+            $ins->golds()->save($obj);
+
+            $ins = Wholesale::where("id",3)->first();
+            $ins->golds()->save($obj);
+
+            $ins = Employee::where("id",4)->first();
+            $ins->golds()->save($obj);
 
         }
     }

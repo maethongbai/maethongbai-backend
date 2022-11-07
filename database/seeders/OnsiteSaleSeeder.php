@@ -24,14 +24,14 @@ class OnsiteSaleSeeder extends Seeder
         $obj = OnsiteSale::where("id", 1)->first(); //ซื้อสำเร็จ
         if (!$obj) {
             $obj = new OnsiteSale();
-            $obj->sale_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
+            $obj->sale_date = "2022-11-03";
             $obj->gold_price = 100050;
             $obj->payment_method = "credit_card";
             $obj->credit_card_type = "VISA";
             $obj->bank_name = "กสิกร";
             $obj->save();
 
-            $ins = Gold::where("id", 12)->first();
+            $ins = Gold::where("id",28)->first();
             $ins->onsiteSales()->save($obj);
 
             $ins = GoldPrice::where("id", 1)->first();
@@ -47,7 +47,7 @@ class OnsiteSaleSeeder extends Seeder
         $obj = OnsiteSale::where("id", 2)->first(); //โอนไม่สำเร็จ
         if (!$obj) {
             $obj = new OnsiteSale();
-            $obj->sale_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
+            $obj->sale_date = "2022-11-03";
             $obj->gold_price = 63700;
             $obj->payment_method = "transfer";
             $obj->slip_image = "photo";
@@ -55,7 +55,7 @@ class OnsiteSaleSeeder extends Seeder
             $obj->transfer_note = "ยอดไม่ตรง";
             $obj->save();
 
-            $ins = Gold::where("id", 13)->first();
+            $ins = Gold::where("id", 31)->first();
             $ins->onsiteSales()->save($obj);
 
             $ins = GoldPrice::where("id", 1)->first();
@@ -71,7 +71,7 @@ class OnsiteSaleSeeder extends Seeder
         $obj = OnsiteSale::where("id", 3)->first(); //โอนสำเร็จ
         if (!$obj) {
             $obj = new OnsiteSale();
-            $obj->sale_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
+            $obj->sale_date = "2022-11-03";
             $obj->gold_price = 63700;
             $obj->payment_method = "transfer";
             $obj->slip_image = "photo";
@@ -79,7 +79,7 @@ class OnsiteSaleSeeder extends Seeder
             $obj->is_cancel_bill = true;
             $obj->save();
 
-            $ins = Gold::where("id", 13)->first();
+            $ins = Gold::where("id", 33)->first();
             $ins->onsiteSales()->save($obj);
 
             $ins = GoldPrice::where("id", 1)->first();
@@ -95,14 +95,14 @@ class OnsiteSaleSeeder extends Seeder
         $obj = OnsiteSale::where("id", 4)->first(); //เงินสด
         if (!$obj) {
             $obj = new OnsiteSale();
-            $obj->sale_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
+            $obj->sale_date = "2022-11-03";
             $obj->gold_price = 15950;
             $obj->payment_method = "cash";
             $obj->paid_amount = 20000;
             $obj->paid_change = 4050;
             $obj->save();
 
-            $ins = Gold::where("id", 27)->first();
+            $ins = Gold::where("id", 45)->first();
             $ins->onsiteSales()->save($obj);
 
             $ins = GoldPrice::where("id", 3)->first();
@@ -118,7 +118,7 @@ class OnsiteSaleSeeder extends Seeder
         $obj = OnsiteSale::where("id", 5)->first(); //เปลี่ยน
         if (!$obj) {
             $obj = new OnsiteSale();
-            $obj->sale_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
+            $obj->sale_date = "2022-11-03";
             $obj->gold_price = 97050;
             $obj->payment_method = "cash";
             $obj->paid_amount = 20000;
@@ -126,7 +126,7 @@ class OnsiteSaleSeeder extends Seeder
             $obj->is_switch_gold = 1;
             $obj->save();
 
-            $ins = Gold::where("id", 5)->first();
+            $ins = Gold::where("id", 46)->first();
             $ins->onsiteSales()->save($obj);
 
             $ins = GoldPrice::where("id", 3)->first();

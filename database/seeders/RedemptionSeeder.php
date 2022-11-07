@@ -22,13 +22,13 @@ class RedemptionSeeder extends Seeder
         $obj = Redemption::where("id",1)->first();
         if (!$obj) {
             $obj = new Redemption();
-            $obj->redemption_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
+            $obj->redemption_date = "2022-11-02";
             $obj->redemption_price = 28815;
             $obj->id_card_image = "not set";
             $obj->check_status = "ผ่านการตรวจสอบ";
             $obj->save();
 
-            $ins = Gold::where("id",16)->first();
+            $ins = Gold::where("id",34)->first();
             $ins->redemptions()->save($obj);
 
             $ins = GoldPrice::where("id",1)->first();
@@ -44,12 +44,12 @@ class RedemptionSeeder extends Seeder
         $obj = Redemption::where("id",2)->first();//รอตรวจสอบ
         if (!$obj) {
             $obj = new Redemption();
-            $obj->redemption_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
+            $obj->redemption_date = "2022-11-02";
             $obj->redemption_price = 28805;
             $obj->id_card_image = "not set";
             $obj->save();
 
-            $ins = Gold::where("id",17)->first();
+            $ins = Gold::where("id",36)->first();
             $ins->redemptions()->save($obj);
 
             $ins = GoldPrice::where("id",2)->first();
@@ -65,13 +65,13 @@ class RedemptionSeeder extends Seeder
         $obj = Redemption::where("id",3)->first();
         if (!$obj) {
             $obj = new Redemption();
-            $obj->redemption_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
+            $obj->redemption_date = "2022-11-02";
             $obj->redemption_price = 58008;
             $obj->id_card_image = "not set";
             $obj->check_status = "ผ่านการตรวจสอบ";
             $obj->save();
 
-            $ins = Gold::where("id",18)->first();
+            $ins = Gold::where("id",37)->first();
             $ins->redemptions()->save($obj);
 
             $ins = GoldPrice::where("id",2)->first();
@@ -87,14 +87,14 @@ class RedemptionSeeder extends Seeder
         $obj = Redemption::where("id",4)->first();
         if (!$obj) {
             $obj = new Redemption();
-            $obj->redemption_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
+            $obj->redemption_date = "2022-11-02";
             $obj->redemption_price = 57631;
             $obj->id_card_image = "not set";
             $obj->check_status = "ไม่ผ่านการตรวจสอบ";
             $obj->note = "ทองปลอม";
             $obj->save();
 
-            $ins = Gold::where("id",19)->first();
+            $ins = Gold::where("id",38)->first();
             $ins->redemptions()->save($obj);
 
             $ins = GoldPrice::where("id",1)->first();
@@ -110,12 +110,12 @@ class RedemptionSeeder extends Seeder
         $obj = Redemption::where("id",5)->first();//รอยืนยัน
         if (!$obj) {
             $obj = new Redemption();
-            $obj->redemption_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
+            $obj->redemption_date = "2022-11-02";
             $obj->redemption_price = 27681;
             $obj->id_card_image = "not set";
             $obj->save();
 
-            $ins = Gold::where("id",20)->first();
+            $ins = Gold::where("id",39)->first();
             $ins->redemptions()->save($obj);
 
             $ins = GoldPrice::where("id",3)->first();

@@ -71,5 +71,26 @@ class GoldTypeSeeder extends Seeder
             $obj->name = "ทองแท่ง";
             $obj->save();
         }
+
+        $obj = GoldType::where("id", 9)->first();
+        if (!$obj) {
+            $obj = new GoldType();
+            $obj->name = "สร้อยข้อเท้า";
+            $obj->save();
+        }
+
+        $obj = GoldType::where("id", 10)->first();
+        if (!$obj) {
+            $obj = new GoldType();
+            $obj->name = "พวงกุญแจ";
+            $obj->save();
+        }
+
+        $obj = GoldType::where("id", 11)->first();
+        if (!$obj) {
+            $obj = new GoldType();
+            $obj->name = "เข็มกลัดเนคไท";
+            $obj->save();
+        }
     }
 }

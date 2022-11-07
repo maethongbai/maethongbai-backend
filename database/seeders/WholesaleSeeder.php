@@ -95,5 +95,105 @@ class WholesaleSeeder extends Seeder
             $obj->address = "พระนคร,กรุงเทพ";
             $obj->save();
         }
+
+        $obj = Wholesale::where("id",10)->first();
+        if (!$obj) {
+            $obj = new Wholesale();
+            $obj->name = "ทองสวย";
+            $obj->phone = "0286003641";
+            $obj->address = "พระนคร,กรุงเทพ";
+            $obj->save();
+        }
+
+        $obj = Wholesale::where("id",11)->first();
+        if (!$obj) {
+            $obj = new Wholesale();
+            $obj->name = "จิ้นไถ่เฮง";
+            $obj->phone = "0286033741";
+            $obj->address = "เยาวราช,กรุงเทพ";
+            $obj->save();
+        }
+
+        $obj = Wholesale::where("id",12)->first();
+        if (!$obj) {
+            $obj = new Wholesale();
+            $obj->name = "มาสเตอร์";
+            $obj->phone = "0216003741";
+            $obj->address = "พระนคร,กรุงเทพ";
+            $obj->save();
+        }
+
+        $obj = Wholesale::where("id",13)->first();
+        if (!$obj) {
+            $obj = new Wholesale();
+            $obj->name = "ฮะเฮง";
+            $obj->phone = "0286013741";
+            $obj->address = "พระนคร,กรุงเทพ";
+            $obj->save();
+        }
+
+        $obj = Wholesale::where("id",14)->first();
+        if (!$obj) {
+            $obj = new Wholesale();
+            $obj->name = "สิริการ";
+            $obj->phone = "0286203741";
+            $obj->address = "พระนคร,กรุงเทพ";
+            $obj->save();
+        }
+
+        $obj = Wholesale::where("id",15)->first();
+        if (!$obj) {
+            $obj = new Wholesale();
+            $obj->name = "โต๊ะกัง";
+            $obj->phone = "0286103741";
+            $obj->address = "พระนคร,กรุงเทพ";
+            $obj->save();
+        }
+
+        $obj = Wholesale::where("id",16)->first();
+        if (!$obj) {
+            $obj = new Wholesale();
+            $obj->name = "เฮงหลี";
+            $obj->phone = "0286023741";
+            $obj->address = "พระนคร,กรุงเทพ";
+            $obj->save();
+        }
+
+        $obj = Wholesale::where("id",17)->first();
+        if (!$obj) {
+            $obj = new Wholesale();
+            $obj->name = "ราขา";
+            $obj->phone = "0286013741";
+            $obj->address = "เยาวราย,กรุงเทพ";
+            $obj->save();
+        }
+
+        $obj = Wholesale::where("id",18)->first();
+        if (!$obj) {
+            $obj = new Wholesale();
+            $obj->name = "";
+            $obj->phone = "0286003741";
+            $obj->address = "พระนคร,กรุงเทพ";
+            $obj->save();
+        }
+
+        $obj = Wholesale::where("id",19)->first();
+        if (!$obj) {
+            $obj = new Wholesale();
+            $obj->name = "";
+            $obj->phone = "0286003741";
+            $obj->address = "พระนคร,กรุงเทพ";
+            $obj->save();
+        }
+
+        $obj = Wholesale::where("id",20)->first();
+        if (!$obj) {
+            $obj = new Wholesale();
+            $obj->name = "";
+            $obj->phone = "0286003741";
+            $obj->address = "พระนคร,กรุงเทพ";
+            $obj->save();
+        }
+
     }
 }

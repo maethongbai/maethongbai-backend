@@ -71,5 +71,37 @@ class CustomOrderWorkerSeeder extends Seeder
             $obj->phone = "0205939583";
             $obj->save();
         }
+
+        $obj = CustomOrderWorker::where("id",8)->first();
+        if (!$obj) {
+            $obj = new CustomOrderWorker();
+            $obj->name = "ช่างแก้ว";
+            $obj->phone = "0847563376";
+            $obj->save();
+        }
+
+        $obj = CustomOrderWorker::where("id",9)->first();
+        if (!$obj) {
+            $obj = new CustomOrderWorker();
+            $obj->name = "ช่างลี";
+            $obj->phone = "0895637465";
+            $obj->save();
+        }
+
+        $obj = CustomOrderWorker::where("id",10)->first();
+        if (!$obj) {
+            $obj = new CustomOrderWorker();
+            $obj->name = "ช่างเม้ง";
+            $obj->phone = "0639485574";
+            $obj->save();
+        }
+
+        $obj = CustomOrderWorker::where("id",11)->first();
+        if (!$obj) {
+            $obj = new CustomOrderWorker();
+            $obj->name = "ช่างลี";
+            $obj->phone = "0948675584";
+            $obj->save();
+        }
     }
 }

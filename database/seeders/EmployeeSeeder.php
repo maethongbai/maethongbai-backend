@@ -21,9 +21,9 @@ class EmployeeSeeder extends Seeder
         if (!$obj) {
             $obj = new Employee();
             $obj->nickname = "ปิ่น";
-            $obj->work_start_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
-            $obj->birth_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
-            $obj->salary = 15000;
+            $obj->work_start_date = "2020-10-02";
+            $obj->birth_date = "1998-10-02";
+            $obj->salary = 25000;
             $obj->save();
 
             $user = User::all()->where("first_name","=","ปิ่นปิ่นปิ่น")->first();
@@ -34,9 +34,9 @@ class EmployeeSeeder extends Seeder
         if (!$obj) {
             $obj = new Employee();
             $obj->nickname = "ปอ";
-            $obj->work_start_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
-            $obj->birth_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
-            $obj->salary = 30000;
+            $obj->work_start_date = "2015-03-14";
+            $obj->birth_date = "1998-03-06";
+            $obj->salary = 28000;
             $obj->role = "employee";
             $obj->save();
 
@@ -48,9 +48,9 @@ class EmployeeSeeder extends Seeder
         if (!$obj) {
             $obj = new Employee();
             $obj->nickname = "แบม";
-            $obj->work_start_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
-            $obj->birth_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
-            $obj->salary = 35000;
+            $obj->work_start_date = "2010-04-25";
+            $obj->birth_date = "1993-06-24";
+            $obj->salary = 30000;
             $obj->role = "account";
             $obj->save();
 
@@ -62,8 +62,8 @@ class EmployeeSeeder extends Seeder
         if (!$obj) {
             $obj = new Employee();
             $obj->nickname = "จ้าน";
-            $obj->work_start_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
-            $obj->birth_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
+            $obj->work_start_date = "2021-11-09";
+            $obj->birth_date = "1991-10-05";
             $obj->salary = 20000;
             $obj->role = "employee";
             $obj->save();
@@ -76,9 +76,9 @@ class EmployeeSeeder extends Seeder
         if (!$obj) {
             $obj = new Employee();
             $obj->nickname = "ป๋อ";
-            $obj->work_start_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
-            $obj->birth_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
-            $obj->salary = 25000;
+            $obj->work_start_date = "2021-05-23";
+            $obj->birth_date = "1995-08-05";
+            $obj->salary = 23000;
             $obj->role = "employee";
             $obj->save();
 
@@ -90,9 +90,9 @@ class EmployeeSeeder extends Seeder
         if (!$obj) {
             $obj = new Employee();
             $obj->nickname = "กอล์ฟ";
-            $obj->work_start_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
-            $obj->birth_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
-            $obj->salary = 25000;
+            $obj->work_start_date = "2022-03-08";
+            $obj->birth_date = "1999-12-05";
+            $obj->salary = 18000;
             $obj->role = "employee";
             $obj->save();
 
@@ -104,8 +104,8 @@ class EmployeeSeeder extends Seeder
         if (!$obj) {
             $obj = new Employee();
             $obj->nickname = "บอส";
-            $obj->work_start_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
-            $obj->birth_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
+            $obj->work_start_date = "2011-09-08";
+            $obj->birth_date = "1992-08-08";
             $obj->salary = 28000;
             $obj->role = "account";
             $obj->save();
@@ -117,11 +117,11 @@ class EmployeeSeeder extends Seeder
         $obj = Employee::where("id",8)->first(); //ลาออก
         if (!$obj) {
             $obj = new Employee();
-            $obj->nickname = "แมค";
-            $obj->work_start_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
-            $obj->birth_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
-            $obj->salary = 28100;
-            $obj->work_quit_date =  fake()->dateTimeBetween('-10 years')->format('Y-m-d');
+            $obj->nickname = "แม็ค";
+            $obj->work_start_date = "2018-02-09";
+            $obj->birth_date = "1991-08-03";
+            $obj->salary = 31000;
+            $obj->work_quit_date = "2022-01-11";
             $obj->role = "account";
             $obj->save();
 
@@ -133,13 +133,27 @@ class EmployeeSeeder extends Seeder
         if (!$obj) {
             $obj = new Employee();
             $obj->nickname = "อมร";
-            $obj->work_start_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
-            $obj->birth_date = fake()->dateTimeBetween('-10 years')->format('Y-m-d');
-            $obj->salary = 28000;
+            $obj->work_start_date = "2000-01-01";
+            $obj->birth_date = "1963-01-02";
+            $obj->salary = 100000;
             $obj->role = "manager";
             $obj->save();
 
             $user = User::all()->where("first_name","=","อมร")->first();
+            $obj->user()->save($user);
+        }
+
+        $obj = Employee::where("id",10)->first();
+        if (!$obj) {
+            $obj = new Employee();
+            $obj->nickname = "มุ้ย";
+            $obj->work_start_date = "2000-02-01";
+            $obj->birth_date = "1970-11-02";
+            $obj->salary = 90000;
+            $obj->role = "account";
+            $obj->save();
+
+            $user = User::all()->where("first_name","=","วิภาพร")->first();
             $obj->user()->save($user);
         }
     }

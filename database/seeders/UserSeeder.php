@@ -28,6 +28,8 @@ class UserSeeder extends Seeder
             $obj->last_name = "Namaki";
             $obj->phone = "0800000001";
             $obj->role = "user";
+            $obj->address = "กรุงเทพ";
+            $obj->id_card_number = "1122465243546";
             $obj->save();
         }
 
@@ -42,6 +44,7 @@ class UserSeeder extends Seeder
             $obj->last_name = "นามสกุลปิ่น";
             $obj->phone = "0800000002";
             $obj->role = "employee";
+            $obj->id_card_number = "8899878765456";
             $obj->save();
         }
 
@@ -56,6 +59,8 @@ class UserSeeder extends Seeder
             $obj->last_name = "เลอร์";
             $obj->phone = "0800000003";
             $obj->role = "employee";
+            $obj->address = "คอนโด";
+            $obj->id_card_number = "8899878794456";
             $obj->save();
         }
 
@@ -70,6 +75,8 @@ class UserSeeder extends Seeder
             $obj->last_name = "บู";
             $obj->phone = "0800000004";
             $obj->role = "account";
+            $obj->address = "ดินแดง";
+            $obj->id_card_number = "8899878795456";
             $obj->save();
         }
 
@@ -84,6 +91,8 @@ class UserSeeder extends Seeder
             $obj->last_name = "ติระศิริชัย";
             $obj->phone = "0800000005";
             $obj->role = "manager";
+            $obj->id_card_number = "1122321234321";
+            $obj->address = "ร้านทอง";
             $obj->save();
         }
 
@@ -98,6 +107,8 @@ class UserSeeder extends Seeder
             $obj->last_name = "Xiao";
             $obj->phone = "0800000006";
             $obj->role = "employee";
+            $obj->id_card_number = "1122121234321";
+            $obj->address = "ฉงฉิ่ง";
             $obj->save();
         }
 
@@ -112,6 +123,8 @@ class UserSeeder extends Seeder
             $obj->last_name = "Wang";
             $obj->phone = "0800000007";
             $obj->role = "employee";
+            $obj->id_card_number = "1122321234323";
+            $obj->address = "ยูนาน";
             $obj->save();
         }
 
@@ -126,6 +139,8 @@ class UserSeeder extends Seeder
             $obj->last_name = "สตาร์บัค";
             $obj->phone = "0800000008";
             $obj->role = "employee";
+            $obj->id_card_number = "1122381234323";
+            $obj->address = "ใจปิ่น";
             $obj->save();
         }
 
@@ -140,6 +155,8 @@ class UserSeeder extends Seeder
             $obj->last_name = "สตาร์";
             $obj->phone = "0800000009";
             $obj->role = "account";
+            $obj->id_card_number = "1162381234323";
+            $obj->address = "เกษตร";
             $obj->save();
         }
 
@@ -161,29 +178,30 @@ class UserSeeder extends Seeder
         $obj = User::where("id",11)->first();
         if (!$obj) {
             $obj = new User();
-            $obj->username = "kiko";
-            $obj->email = "kiko@gmail.com";
-            $obj->password = Hash::make("kiko");
-            $obj->name_prefix = "นางสาว";
-            $obj->first_name = "Kiko";
-            $obj->last_name = "Long";
+            $obj->username = "หลานจ้าน";
+            $obj->email = "lanzhan@gmail.com";
+            $obj->password = Hash::make("lanzhan");
+            $obj->name_prefix = "นาย";
+            $obj->first_name = "วั่งจี";
+            $obj->last_name = "หลาน";
             $obj->phone = "0800000011";
             $obj->role = "user";
+            $obj->address = "กูซู";
             $obj->save();
         }
 
         $obj = User::where("id",12)->first();
         if (!$obj) {
             $obj = new User();
-            $obj->username = "diana";
-            $obj->email = "diana@gmail.com";
-            $obj->password = Hash::make("diana");
-            $obj->name_prefix = "นางสาว";
-            $obj->first_name = "Diana";
-            $obj->last_name = "Jam";
+            $obj->username = "เว่ยอิง";
+            $obj->email = "weiying@gmail.com";
+            $obj->password = Hash::make("weiying");
+            $obj->name_prefix = "นาย";
+            $obj->first_name = "อู๋เซี่ยน";
+            $obj->last_name = "เว่ย";
             $obj->phone = "0800000012";
             $obj->role = "user";
-            $obj->address = "บางกะปิ";
+            $obj->address = "อวิ๋นเมิ่ง";
             $obj->save();
         }
 
@@ -228,6 +246,7 @@ class UserSeeder extends Seeder
             $obj->phone = "0800000015";
             $obj->role = "user";
             $obj->address = "บ้านหนองใหญ่";
+            $obj->id_card_number = "1122435249546";
             $obj->save();
         }
 
@@ -241,7 +260,72 @@ class UserSeeder extends Seeder
             $obj->first_name = "แม็ค";
             $obj->last_name = "กีกี้";
             $obj->phone = "0800000016";
+            $obj->address = "บางกะปิ";
             $obj->role = "employee";
+            $obj->id_card_number = "1122435249546";
+            $obj->save();
+        }
+
+        $obj = User::where("id",17)->first();
+        if (!$obj) {
+            $obj = new User();
+            $obj->username = "niall";
+            $obj->email = "niall@gmail.com";
+            $obj->password = Hash::make("nialler");
+            $obj->name_prefix = "นาย";
+            $obj->first_name = "ไนออล";
+            $obj->last_name = "ฮอแรน";
+            $obj->phone = "0800000017";
+            $obj->role = "user";
+            $obj->address = "ไอร์แลน";
+            $obj->save();
+        }
+
+        $obj = User::where("id",18)->first();
+        if (!$obj) {
+            $obj = new User();
+            $obj->username = "zayn";
+            $obj->email = "zayn@gmail.com";
+            $obj->password = Hash::make("malik");
+            $obj->name_prefix = "นาย";
+            $obj->first_name = "Zayn";
+            $obj->last_name = "Malik";
+            $obj->phone = "0800000018";
+            $obj->role = "user";
+            $obj->address = "England";
+            $obj->id_card_number = "1122435243546";
+            $obj->save();
+        }
+
+        $obj = User::where("id",19)->first();
+        if (!$obj) {
+            $obj = new User();
+            $obj->username = "mui";
+            $obj->email = "mui@gmail.com";
+            $obj->password = Hash::make("opalmui");
+            $obj->name_prefix = "นาง";
+            $obj->first_name = "วิภาพร";
+            $obj->last_name = "ติระศิริชัย";
+            $obj->phone = "0800000019";
+            $obj->role = "account";
+            $obj->address = "บางแค";
+            $obj->id_card_number = "1122435240546";
+            $obj->save();
+        }
+
+        $obj = User::where("id",20)->first();
+        if (!$obj) {
+            $obj = new User();
+            $obj->username = "lemon";
+            $obj->email = "lemon@gmail.com";
+            $obj->password = Hash::make("lemonn");
+            $obj->name_prefix = "นาย";
+            $obj->first_name = "เลมอน";
+            $obj->last_name = "คิ้ว";
+            $obj->phone = "0800000020";
+            $obj->role = "employee";
+            $obj->address = "บางแค";
+            $obj->id_card_number = "1122435240546";
             $obj->save();
         }
     }

@@ -323,7 +323,7 @@ class UserSeeder extends Seeder
             $obj->first_name = "เลมอน";
             $obj->last_name = "คิ้ว";
             $obj->phone = "0800000020";
-            $obj->role = "employee";
+            $obj->role = "user";
             $obj->address = "บางแค";
             $obj->id_card_number = "1122435240546";
             $obj->save();
